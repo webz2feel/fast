@@ -1,0 +1,11 @@
+<?php
+
+namespace Fast\{Module}\Repositories\Caches;
+
+use Fast\Support\Repositories\Caches\CacheAbstractDecorator;
+use Fast\{Module}\Repositories\Interfaces\{Name}Interface;
+
+class {Name}CacheDecorator extends CacheAbstractDecorator implements {Name}Interface
+{
+
+}

@@ -1,0 +1,9 @@
+{
+    "name": "Payment",
+    "namespace": "Fast\\Payment\\",
+    "provider": "Fast\\Payment\\Providers\\PaymentServiceProvider",
+    "author": "Sang Nguyen",
+    "url": "https://sangnguyen.info",
+    "version": "1.0",
+    "description": "Payment plugin"
+}

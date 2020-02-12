@@ -1,0 +1,17 @@
+{
+  "name": "fast/shortcode",
+  "description": "Shortcode package for Fast CMS application",
+  "type": "package",
+  "autoload": {
+    "psr-4": {
+      "Fast\\Shortcode\\": "src"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Fast\\Shortcode\\Providers\\ShortcodeServiceProvider"
+      ]
+    }
+  }
+}

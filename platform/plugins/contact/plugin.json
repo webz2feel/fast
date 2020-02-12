@@ -1,0 +1,9 @@
+{
+    "name": "Contact Form",
+    "namespace": "Fast\\Contact\\",
+    "provider": "Fast\\Contact\\Providers\\ContactServiceProvider",
+    "author": "Sang Nguyen",
+    "url": "https://sangnguyen.info",
+    "version": "4.0",
+    "description": "Contact Form"
+}

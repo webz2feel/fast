@@ -1,0 +1,17 @@
+{
+  "name": "fast/theme-generator",
+  "description": "Theme generator",
+  "type": "package",
+  "autoload": {
+    "psr-4": {
+      "Fast\\ThemeGenerator\\": "src"
+    }
+  },
+  "extra":{
+    "laravel":{
+      "providers":[
+        "Fast\\ThemeGenerator\\Providers\\ThemeGeneratorServiceProvider"
+      ]
+    }
+  }
+}

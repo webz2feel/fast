@@ -1,0 +1,28 @@
+{
+  "name": "fast/theme",
+  "description": "Theme package for Fast CMS application",
+  "type": "package",
+  "autoload": {
+    "psr-4": {
+      "Fast\\Theme\\": "src"
+    }
+  },
+  "require": {
+    "laravelium/sitemap": "^6.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Fast\\Theme\\Providers\\ThemeServiceProvider",
+        "Fast\\Theme\\Providers\\RouteServiceProvider"
+      ],
+      "aliases": {
+        "Theme": "Fast\\Theme\\Facades\\ThemeFacade",
+        "ThemeOption": "Fast\\Theme\\Facades\\ThemeOptionFacade",
+        "ThemeManager": "Fast\\Theme\\Facades\\ManagerFacade",
+        "AdminBar": "Fast\\Theme\\Facades\\AdminBarFacade",
+        "SiteMapManager": "Fast\\Theme\\Facades\\SiteMapManagerFacade"
+      }
+    }
+  }
+}

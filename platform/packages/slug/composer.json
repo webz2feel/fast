@@ -1,0 +1,20 @@
+{
+    "name": "fast/slug",
+    "description": "Slug/Permalink for Fast CMS application",
+    "type": "package",
+    "autoload": {
+        "psr-4": {
+            "Fast\\Slug\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Fast\\Slug\\Providers\\SlugServiceProvider"
+            ],
+            "aliases": {
+                "SlugHelper": "Fast\\Slug\\Facades\\SlugHelperFacade"
+            }
+        }
+    }
+}

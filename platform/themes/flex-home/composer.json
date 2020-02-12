@@ -1,0 +1,19 @@
+{
+  "name": "fast/flex-home",
+  "type": "fast-theme",
+  "description": "Example theme for Fast CMS",
+  "homepage": "http://fast.com",
+  "authors": [
+    {
+      "name": "Fast",
+      "homepage": "http://fast.com"
+    }
+  ],
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Theme\\FlexHome\\": "src/"
+    }
+  }
+}

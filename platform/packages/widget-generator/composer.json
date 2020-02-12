@@ -1,0 +1,17 @@
+{
+  "name": "fast/widget-generator",
+  "description": "Widget generator",
+  "type": "package",
+  "autoload": {
+    "psr-4": {
+      "Fast\\WidgetGenerator\\": "src"
+    }
+  },
+  "extra":{
+    "laravel":{
+      "providers":[
+        "Fast\\WidgetGenerator\\Providers\\WidgetGeneratorServiceProvider"
+      ]
+    }
+  }
+}

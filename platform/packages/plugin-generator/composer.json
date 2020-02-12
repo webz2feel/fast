@@ -1,0 +1,17 @@
+{
+  "name": "fast/plugin-generator",
+  "description": "Plugin generator",
+  "type": "package",
+  "autoload": {
+    "psr-4": {
+      "Fast\\PluginGenerator\\": "src"
+    }
+  },
+  "extra":{
+    "laravel":{
+      "providers":[
+        "Fast\\PluginGenerator\\Providers\\PluginGeneratorServiceProvider"
+      ]
+    }
+  }
+}

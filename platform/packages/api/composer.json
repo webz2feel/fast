@@ -1,0 +1,22 @@
+{
+    "name": "fast/api",
+    "description": "API package for Fast CMS application",
+    "type": "package",
+    "autoload": {
+        "psr-4": {
+            "Fast\\Api\\": "src"
+        }
+    },
+    "require": {
+        "laravel/passport": "^8.0",
+        "mpociot/laravel-apidoc-generator": "^4.0",
+        "fruitcake/laravel-cors": "^1.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Fast\\Api\\Providers\\ApiServiceProvider"
+            ]
+        }
+    }
+}

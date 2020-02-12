@@ -1,0 +1,77 @@
+{
+    "name": "fast/platform",
+    "description": "The Fast Platform based on Laravel Framework.",
+    "keywords": [
+        "fast",
+        "fast cms",
+        "fast platform"
+    ],
+    "homepage": "https://fast.com",
+    "support": {
+        "issues": "https://github.com/fast/issues",
+        "document": "https://docs.fast.com/cms"
+    },
+    "authors": [
+        {
+            "name": "Sang Nguyen",
+            "email": "sangnguyenplus@gmail.com"
+        }
+    ],
+    "type": "project",
+    "require": {
+        "barryvdh/laravel-dompdf": "^0.8.2",
+        "botble/assets": "^1.0",
+        "davejamesmiller/laravel-breadcrumbs": "^5.3",
+        "proengsoft/laravel-jsvalidation": "^2.5",
+        "intervention/image": "^2.4",
+        "kris/laravel-form-builder": "^1.21",
+        "laravelcollective/html": "^6.0",
+        "ralouphie/mimey": "^2.0",
+        "tightenco/ziggy": "^0.8",
+        "yajra/laravel-datatables-buttons": "^4.7",
+        "yajra/laravel-datatables-oracle": "^9.6",
+        "guzzlehttp/guzzle": "^6.3",
+        "mews/purifier": "~3.1",
+        "symfony/var-exporter": "^4.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fast\\Support\\": "support/src",
+            "Fast\\ACL\\": "acl/src",
+            "Fast\\Base\\": "base/src",
+            "Fast\\Dashboard\\": "dashboard/src",
+            "Fast\\Media\\": "media/src",
+            "Fast\\Setting\\": "setting/src",
+            "Fast\\Table\\": "table/src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Fast\\Base\\Providers\\BaseServiceProvider",
+                "Fast\\Base\\Providers\\CommandServiceProvider",
+                "Fast\\Base\\Providers\\EventServiceProvider",
+                "Fast\\Base\\Providers\\BreadcrumbsServiceProvider",
+                "Fast\\Base\\Providers\\ComposerServiceProvider",
+                "Fast\\Base\\Providers\\MailConfigServiceProvider",
+                "Fast\\Base\\Providers\\FormServiceProvider",
+                "Fast\\Support\\Providers\\SupportServiceProvider",
+                "Fast\\Table\\Providers\\TableServiceProvider",
+                "Fast\\ACL\\Providers\\AclServiceProvider",
+                "Fast\\Dashboard\\Providers\\DashboardServiceProvider",
+                "Fast\\Media\\Providers\\MediaServiceProvider"
+            ],
+            "aliases": {
+                "Assets": "Fast\\Base\\Facades\\AssetsFacade",
+                "MetaBox": "Fast\\Base\\Facades\\MetaBoxFacade",
+                "Action": "Fast\\Base\\Facades\\ActionFacade",
+                "Filter": "Fast\\Base\\Facades\\FilterFacade",
+                "EmailHandler": "Fast\\Base\\Facades\\EmailHandlerFacade",
+                "DashboardMenu": "Fast\\Base\\Facades\\DashboardMenuFacade",
+                "MailVariable": "Fast\\Base\\Facades\\MailVariableFacade"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

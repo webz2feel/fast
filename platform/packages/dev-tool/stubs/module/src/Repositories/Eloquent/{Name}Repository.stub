@@ -1,0 +1,10 @@
+<?php
+
+namespace Fast\{Module}\Repositories\Eloquent;
+
+use Fast\Support\Repositories\Eloquent\RepositoriesAbstract;
+use Fast\{Module}\Repositories\Interfaces\{Name}Interface;
+
+class {Name}Repository extends RepositoriesAbstract implements {Name}Interface
+{
+}

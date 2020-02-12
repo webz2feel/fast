@@ -1,0 +1,9 @@
+{
+    "name": "Translation",
+    "namespace": "Fast\\Translation\\",
+    "provider": "Fast\\Translation\\Providers\\TranslationServiceProvider",
+    "author": "Sang Nguyen",
+    "url": "https://sangnguyen.info",
+    "version": "4.0",
+    "description": "Manage translation text"
+}

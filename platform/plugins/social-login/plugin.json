@@ -1,0 +1,9 @@
+{
+    "name": "Social Login",
+    "namespace": "Fast\\SocialLogin\\",
+    "provider": "Fast\\SocialLogin\\Providers\\SocialLoginServiceProvider",
+    "author": "Sang Nguyen",
+    "url": "https://sangnguyen.info",
+    "version": "4.0",
+    "description": "Social login for Fast CMS"
+}

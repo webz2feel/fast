@@ -1,0 +1,21 @@
+{
+  "name": "fast/widget",
+  "description": "Widget package for Fast CMS application",
+  "type": "package",
+  "autoload": {
+    "psr-4": {
+      "Fast\\Widget\\": "src"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Fast\\Widget\\Providers\\WidgetServiceProvider"
+      ],
+      "aliases": {
+        "Widget": "Fast\\Widget\\Facades\\WidgetFacade",
+        "WidgetGroup": "Fast\\Widget\\Facades\\WidgetGroupFacade"
+      }
+    }
+  }
+}
