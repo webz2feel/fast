@@ -2,8 +2,8 @@
     "name": "Translation",
     "namespace": "Fast\\Translation\\",
     "provider": "Fast\\Translation\\Providers\\TranslationServiceProvider",
-    "author": "Sang Nguyen",
-    "url": "https://sangnguyen.info",
+    "author": "Imran Ali",
+    "url": "http://imran.iilogics.com",
     "version": "4.0",
     "description": "Manage translation text"
 }

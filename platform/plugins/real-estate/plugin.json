@@ -2,8 +2,8 @@
     "name": "Real Estate",
     "namespace": "Fast\\RealEstate\\",
     "provider": "Fast\\RealEstate\\Providers\\RealEstateServiceProvider",
-    "author": "Sang Nguyen",
-    "url": "http://sangnguyen.info",
+    "author": "Imran Ali",
+    "url": "http://imran.iilogics.com",
     "version": "1.0",
     "description": "Real estate supports with projects, properties and some others"
 }

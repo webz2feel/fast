@@ -2,8 +2,8 @@
     "name": "Payment",
     "namespace": "Fast\\Payment\\",
     "provider": "Fast\\Payment\\Providers\\PaymentServiceProvider",
-    "author": "Sang Nguyen",
-    "url": "https://sangnguyen.info",
+    "author": "Imran Ali",
+    "url": "http://imran.iilogics.com",
     "version": "1.0",
     "description": "Payment plugin"
 }

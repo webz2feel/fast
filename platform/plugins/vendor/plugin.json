@@ -2,8 +2,8 @@
   "name": "Vendor",
   "namespace": "Fast\\Vendor\\",
   "provider": "Fast\\Vendor\\Providers\\VendorServiceProvider",
-  "author": "Sang Nguyen",
-  "url": "https://sangnguyen.info",
+  "author": "Imran Ali",
+  "url": "http://imran.iilogics.com",
   "version": "4.0",
   "description": "Manage vendor, user register/login"
 }

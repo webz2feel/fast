@@ -2,8 +2,8 @@
     "name": "Audit Log",
     "namespace": "Fast\\AuditLog\\",
     "provider": "Fast\\AuditLog\\Providers\\AuditLogServiceProvider",
-    "author": "Sang Nguyen",
-    "url": "https://sangnguyen.info",
+    "author": "Imran Ali",
+    "url": "http://imran.iilogics.com",
     "version": "4.0",
     "description": "Record activities logs"
 }

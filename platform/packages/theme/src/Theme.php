@@ -959,7 +959,7 @@ class Theme implements ThemeContract
         }
 
         $content->withHeaders([
-            'Author'      => 'Sang Nguyen (sangnguyenplus@gmail.com)',
+            'Author'      => 'Imran Ali (imran@wtwm.com)',
             'Author-Team' => 'https://fast.com',
             'CMS'         => 'Fast CMS',
             'CMS-Version' => get_cms_version(),

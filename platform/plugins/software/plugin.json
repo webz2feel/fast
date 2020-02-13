@@ -1,0 +1,9 @@
+{
+    "name": "Softwares",
+    "namespace": "Fast\\Software\\",
+    "provider": "Fast\\Software\\Providers\\SoftwareServiceProvider",
+    "author": "Imran Ali",
+    "url": "http://imran.iilogics.com",
+    "version": "1.0",
+    "description": "Manage software's, categories, tags"
+}

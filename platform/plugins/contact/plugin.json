@@ -2,8 +2,8 @@
     "name": "Contact Form",
     "namespace": "Fast\\Contact\\",
     "provider": "Fast\\Contact\\Providers\\ContactServiceProvider",
-    "author": "Sang Nguyen",
-    "url": "https://sangnguyen.info",
+    "author": "Imran Ali",
+    "url": "http://imran.iilogics.com",
     "version": "4.0",
     "description": "Contact Form"
 }

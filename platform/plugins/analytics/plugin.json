@@ -2,8 +2,8 @@
     "name": "Analytics",
     "namespace": "Fast\\Analytics\\",
     "provider": "Fast\\Analytics\\Providers\\AnalyticsServiceProvider",
-    "author": "Sang Nguyen",
-    "url": "https://sangnguyen.info",
+    "author": "Imran Ali",
+    "url": "http://imran.iilogics.com",
     "version": "4.0",
     "description": "Tracking data from Google Analytics"
 }

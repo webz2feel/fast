@@ -2,8 +2,8 @@
     "name": "Location",
     "namespace": "Fast\\Location\\",
     "provider": "Fast\\Location\\Providers\\LocationServiceProvider",
-    "author": "Sang Nguyen",
-    "url": "https://sangnguyen.info",
+    "author": "Imran Ali",
+    "url": "http://imran.iilogics.com",
     "version": "1.0",
     "description": "The description for module location"
 }

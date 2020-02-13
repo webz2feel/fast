@@ -2,8 +2,8 @@
     "name": "{Module}",
     "namespace": "Fast\\{Module}\\",
     "provider": "Fast\\{Module}\\Providers\\{Module}ServiceProvider",
-    "author": "Sang Nguyen",
-    "url": "https://sangnguyen.info",
+    "author": "Imran Ali",
+    "url": "http://imran.iilogics.com",
     "version": "1.0",
     "description": "The description for module {module}"
 }

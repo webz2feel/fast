@@ -13,8 +13,7 @@
         "barryvdh/laravel-debugbar": "^3.2",
         "barryvdh/laravel-ide-helper": "^2.6",
         "phpmd/phpmd": "^2.8",
-        "doctrine/dbal": "^2.9",
-        "fast/git-commit-checker": "^1.0"
+        "doctrine/dbal": "^2.9"
     },
     "extra": {
         "laravel": {
@@ -22,5 +21,7 @@
                 "Fast\\DevTool\\Providers\\DevToolServiceProvider"
             ]
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

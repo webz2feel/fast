@@ -2,8 +2,8 @@
     "name": "Backup",
     "namespace": "Fast\\Backup\\",
     "provider": "Fast\\Backup\\Providers\\BackupServiceProvider",
-    "author": "Sang Nguyen",
-    "url": "https://sangnguyen.info",
+    "author": "Imran Ali",
+    "url": "http://imran.iilogics.com",
     "version": "4.0",
     "description": "Backup & restore database, uploads folder"
 }

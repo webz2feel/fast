@@ -2,8 +2,8 @@
     "name": "Social Login",
     "namespace": "Fast\\SocialLogin\\",
     "provider": "Fast\\SocialLogin\\Providers\\SocialLoginServiceProvider",
-    "author": "Sang Nguyen",
-    "url": "https://sangnguyen.info",
+    "author": "Imran Ali",
+    "url": "http://imran.iilogics.com",
     "version": "4.0",
     "description": "Social login for Fast CMS"
 }

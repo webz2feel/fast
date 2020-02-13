@@ -2,8 +2,8 @@
     "name": "Career",
     "namespace": "Fast\\Career\\",
     "provider": "Fast\\Career\\Providers\\CareerServiceProvider",
-    "author": "Sang Nguyen",
-    "url": "https://sangnguyen.info",
+    "author": "Imran Ali",
+    "url": "http://imran.iilogics.com",
     "version": "1.0",
     "description": "The description for plugin career"
 }

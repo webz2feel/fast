@@ -2,8 +2,8 @@
     "name": "Language",
     "namespace": "Fast\\Language\\",
     "provider": "Fast\\Language\\Providers\\LanguageServiceProvider",
-    "author": "Sang Nguyen",
-    "url": "https://sangnguyen.info",
+    "author": "Imran Ali",
+    "url": "http://imran.iilogics.com",
     "version": "4.0",
     "description": "Multilingual for Fast CMS"
 }
