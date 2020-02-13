@@ -28,43 +28,43 @@ return [
 
     [
         'name'        => 'Categories',
-        'flag'        => 'categories.index',
+        'flag'        => 'software-categories.index',
         'parent_flag' => 'plugins.software',
     ],
     [
         'name'        => 'Create',
-        'flag'        => 'categories.create',
-        'parent_flag' => 'categories.index',
+        'flag'        => 'software-categories.create',
+        'parent_flag' => 'software-categories.index',
     ],
     [
         'name'        => 'Edit',
-        'flag'        => 'categories.edit',
-        'parent_flag' => 'categories.index',
+        'flag'        => 'software-categories.edit',
+        'parent_flag' => 'software-categories.index',
     ],
     [
         'name'        => 'Delete',
-        'flag'        => 'categories.destroy',
-        'parent_flag' => 'categories.index',
+        'flag'        => 'software-categories.destroy',
+        'parent_flag' => 'software-categories.index',
     ],
 
     [
         'name'        => 'Tags',
-        'flag'        => 'tags.index',
+        'flag'        => 'software-tags.index',
         'parent_flag' => 'plugins.software',
     ],
     [
         'name'        => 'Create',
-        'flag'        => 'tags.create',
-        'parent_flag' => 'tags.index',
+        'flag'        => 'software-tags.create',
+        'parent_flag' => 'software-tags.index',
     ],
     [
         'name'        => 'Edit',
-        'flag'        => 'tags.edit',
-        'parent_flag' => 'tags.index',
+        'flag'        => 'software-tags.edit',
+        'parent_flag' => 'software-tags.index',
     ],
     [
         'name'        => 'Delete',
-        'flag'        => 'tags.destroy',
-        'parent_flag' => 'tags.index',
+        'flag'        => 'software-tags.destroy',
+        'parent_flag' => 'software-tags.index',
     ],
 ];

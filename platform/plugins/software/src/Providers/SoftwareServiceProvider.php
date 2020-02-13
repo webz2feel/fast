@@ -5,10 +5,16 @@ use Fast\Base\Supports\Helper;
 use Fast\Base\Traits\LoadAndPublishDataTrait;
 use Fast\Software\Models\Category;
 use Fast\Software\Models\Compatibility;
-use Fast\Software\Models\Language;
+use Fast\Software\Models\Language as SoftwareLanguage;
 use Fast\Software\Models\Software;
 use Fast\Software\Models\System;
 use Fast\Software\Models\Tag;
+use Fast\Software\Repositories\Caches\CategoryCacheDecorator;
+use Fast\Software\Repositories\Caches\TagCacheDecorator;
+use Fast\Software\Repositories\Eloquent\CategoryRepository;
+use Fast\Software\Repositories\Eloquent\TagRepository;
+use Fast\Software\Repositories\Interfaces\CategoryInterface;
+use Fast\Software\Repositories\Interfaces\TagInterface;
 use Illuminate\Routing\Events\RouteMatched;
 use Illuminate\Support\ServiceProvider;
 use Event;
@@ -21,6 +27,12 @@ class SoftwareServiceProvider extends ServiceProvider
 
     public function register()
     {
+        $this->app->bind(CategoryInterface::class, function() {
+            return new CategoryCacheDecorator(new CategoryRepository(new Category()));
+        });
+        $this->app->bind(TagInterface::class, function() {
+            return new TagCacheDecorator(new TagRepository(new Tag()));
+        });
         Helper::autoload(__DIR__ . '/../../helpers');
     }
 
@@ -61,8 +73,8 @@ class SoftwareServiceProvider extends ServiceProvider
                        'parent_id'   => 'cms-plugins-software',
                        'name'        => 'plugins/software::categories.menu_name',
                        'icon'        => null,
-                       'url'         => route('categories.index'),
-                       'permissions' => ['categories.index'],
+                       'url'         => route('software-categories.index'),
+                       'permissions' => ['software-categories.index'],
                    ])
                     ->registerItem([
                        'id'          => 'cms-plugins-software-tags',
@@ -70,8 +82,8 @@ class SoftwareServiceProvider extends ServiceProvider
                        'parent_id'   => 'cms-plugins-software',
                        'name'        => 'plugins/software::tags.menu_name',
                        'icon'        => null,
-                       'url'         => route('tags.index'),
-                       'permissions' => ['tags.index'],
+                       'url'         => route('software-tags.index'),
+                       'permissions' => ['software-tags.index'],
                    ])
                     ->registerItem([
                        'id'          => 'cms-plugins-software-system',
@@ -102,7 +114,7 @@ class SoftwareServiceProvider extends ServiceProvider
                    ]);
         });
         $this->app->booted(function () {
-            $models = [Software::class, Category::class, Tag::class, System::class, Compatibility::class, Language::class];
+            $models = [Software::class, Category::class, Tag::class, System::class, Compatibility::class, SoftwareLanguage::class];
 
             if (defined('LANGUAGE_MODULE_SCREEN_NAME')) {
                 Language::registerModule($models);

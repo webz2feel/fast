@@ -20,29 +20,29 @@ Route::group(['namespace' => 'Fast\Software\Http\Controllers', 'middleware' => '
             ]);
         });
 
-        Route::group(['prefix' => 'software-categories', 'as' => 'categories.'], function () {
+        Route::group(['prefix' => 'software-categories', 'as' => 'software-categories.'], function () {
             Route::resource('', 'CategoryController')->parameters(['' => 'category']);
 
             Route::delete('items/destroy', [
                 'as'         => 'deletes',
                 'uses'       => 'CategoryController@deletes',
-                'permission' => 'categories.destroy',
+                'permission' => 'software-categories.destroy',
             ]);
         });
 
-        Route::group(['prefix' => 'software-tags', 'as' => 'tags.'], function () {
+        Route::group(['prefix' => 'software-tags', 'as' => 'software-tags.'], function () {
             Route::resource('', 'TagController')->parameters(['' => 'tag']);
 
             Route::delete('items/destroy', [
                 'as'         => 'deletes',
                 'uses'       => 'TagController@deletes',
-                'permission' => 'tags.destroy',
+                'permission' => 'software-tags.destroy',
             ]);
 
             Route::get('all', [
                 'as'         => 'all',
                 'uses'       => 'TagController@getAllTags',
-                'permission' => 'tags.index',
+                'permission' => 'software-.index',
             ]);
         });
         Route::group(['prefix' => 'software-system', 'as' => 'systems.'], function () {

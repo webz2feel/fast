@@ -2,10 +2,10 @@
 
 use Fast\Base\Enums\BaseStatusEnum;
 use Fast\Base\Supports\SortItemsWithChildrenHelper;
-use Fast\Blog\Repositories\Interfaces\CategoryInterface;
-use Fast\Blog\Repositories\Interfaces\PostInterface;
-use Fast\Blog\Repositories\Interfaces\TagInterface;
-use Fast\Blog\Supports\PostFormat;
+use Fast\Software\Repositories\Interfaces\CategoryInterface;
+use Fast\Software\Repositories\Interfaces\PostInterface;
+use Fast\Software\Repositories\Interfaces\TagInterface;
+use Fast\Software\Supports\PostFormat;
 use Illuminate\Support\Arr;
 
 if (!function_exists('get_featured_posts')) {
@@ -186,20 +186,20 @@ if (!function_exists('get_category_by_id')) {
     }
 }
 
-if (!function_exists('get_categories')) {
+if (!function_exists('get_software_categories')) {
     /**
      * @param array $args
      * @return array|mixed
      */
-    function get_categories(array $args = [])
+    function get_software_categories(array $args = [])
     {
         $indent = Arr::get($args, 'indent', '——');
 
         $repo = app(CategoryInterface::class);
 
         $categories = $repo->getCategories(Arr::get($args, 'select', ['*']), [
-            'categories.is_default' => 'DESC',
-            'categories.order'      => 'ASC',
+            'software_categories.is_default' => 'DESC',
+            'software_categories.order'      => 'ASC',
         ]);
 
         $categories = sort_item_with_children($categories);

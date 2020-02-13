@@ -2,7 +2,7 @@
     <div class="widget meta-boxes">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseTags">
             <h4 class="widget-title">
-                <span>{{ trans('plugins/blog::tags.menu') }}</span>
+                <span>{{ trans('plugins/software::tags.menu') }}</span>
                 <i class="fa fa-angle-down narrow-icon"></i>
             </h4>
         </a>

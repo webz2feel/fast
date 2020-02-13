@@ -38,7 +38,7 @@ trait HasDeleteManyItemsTrait
             }
 
             $repository->delete($item);
-            event(new DeletedContentEvent($screen, $request, $item));
+//            event(new DeletedContentEvent($screen, $request, $item));
         }
 
         return $response->setMessage(trans('core/base::notices.delete_success_message'));
