@@ -4,10 +4,10 @@ namespace Fast\Software\Forms;
 
 use Fast\Base\Enums\BaseStatusEnum;
 use Fast\Base\Forms\FormAbstract;
-use Fast\Software\Http\Requests\SystemRequest;
-use Fast\Software\Models\Tag;
+use Fast\Software\Http\Requests\LanguageRequest;
+use Fast\Software\Models\Language;
 
-class TagForm extends FormAbstract
+class LanguageForm extends FormAbstract
 {
 
     /**
@@ -17,8 +17,8 @@ class TagForm extends FormAbstract
     public function buildForm()
     {
         $this
-            ->setupModel(new Tag)
-            ->setValidatorClass(SystemRequest::class)
+            ->setupModel(new Language)
+            ->setValidatorClass(LanguageRequest::class)
             ->withCustomFields()
             ->add('name', 'text', [
                 'label'      => trans('core/base::forms.name'),

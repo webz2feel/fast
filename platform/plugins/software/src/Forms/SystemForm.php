@@ -5,9 +5,9 @@ namespace Fast\Software\Forms;
 use Fast\Base\Enums\BaseStatusEnum;
 use Fast\Base\Forms\FormAbstract;
 use Fast\Software\Http\Requests\SystemRequest;
-use Fast\Software\Models\Tag;
+use Fast\Software\Models\System;
 
-class TagForm extends FormAbstract
+class SystemForm extends FormAbstract
 {
 
     /**
@@ -17,7 +17,7 @@ class TagForm extends FormAbstract
     public function buildForm()
     {
         $this
-            ->setupModel(new Tag)
+            ->setupModel(new System)
             ->setValidatorClass(SystemRequest::class)
             ->withCustomFields()
             ->add('name', 'text', [

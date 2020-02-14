@@ -4,19 +4,19 @@ Route::group(['namespace' => 'Fast\Software\Http\Controllers', 'middleware' => '
 
     Route::group(['prefix' => config('core.base.general.admin_dir'), 'middleware' => 'auth'], function () {
 
-        Route::group(['prefix' => 'softwares', 'as' => 'software.'], function () {
+        Route::group(['prefix' => 'softwares', 'as' => 'softwares.'], function () {
             Route::resource('', 'SoftwareController')->parameters(['' => 'software']);
 
             Route::delete('items/destroy', [
                 'as'         => 'deletes',
                 'uses'       => 'SoftwareController@deletes',
-                'permission' => 'posts.destroy',
+                'permission' => 'softwares.destroy',
             ]);
 
-            Route::get('widgets/recent-posts', [
-                'as'         => 'widget.recent-posts',
-                'uses'       => 'SoftwareController@getWidgetRecentPosts',
-                'permission' => 'posts.index',
+            Route::get('widgets/recent-softwares', [
+                'as'         => 'widget.recent-softwares',
+                'uses'       => 'SoftwareController@getWidgetRecentSoftwares',
+                'permission' => 'softwares.index',
             ]);
         });
 
@@ -42,7 +42,7 @@ Route::group(['namespace' => 'Fast\Software\Http\Controllers', 'middleware' => '
             Route::get('all', [
                 'as'         => 'all',
                 'uses'       => 'TagController@getAllTags',
-                'permission' => 'software-.index',
+                'permission' => 'software-tags.index',
             ]);
         });
         Route::group(['prefix' => 'software-system', 'as' => 'systems.'], function () {

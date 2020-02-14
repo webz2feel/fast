@@ -3,51 +3,51 @@
 use Fast\Base\Enums\BaseStatusEnum;
 use Fast\Base\Supports\SortItemsWithChildrenHelper;
 use Fast\Software\Repositories\Interfaces\CategoryInterface;
-use Fast\Software\Repositories\Interfaces\PostInterface;
+use Fast\Software\Repositories\Interfaces\SoftwareInterface;
 use Fast\Software\Repositories\Interfaces\TagInterface;
-use Fast\Software\Supports\PostFormat;
+use Fast\Software\Supports\SoftwareFormat;
 use Illuminate\Support\Arr;
 
-if (!function_exists('get_featured_posts')) {
+if (!function_exists('get_featured_softwares')) {
     /**
      * @param $limit
      * @return mixed
      *
      */
-    function get_featured_posts($limit)
+    function get_featured_softwares($limit)
     {
-        return app(PostInterface::class)->getFeatured($limit);
+        return app(SoftwareInterface::class)->getFeatured($limit);
     }
 }
 
-if (!function_exists('get_latest_posts')) {
+if (!function_exists('get_latest_softwares')) {
     /**
      * @param $limit
      * @param array $excepts
      * @return mixed
      *
      */
-    function get_latest_posts($limit, $excepts = [])
+    function get_latest_softwares($limit, $excepts = [])
     {
-        return app(PostInterface::class)->getListPostNonInList($excepts, $limit);
+        return app(SoftwareInterface::class)->getListSoftwareNonInList($excepts, $limit);
     }
 }
 
 
-if (!function_exists('get_related_posts')) {
+if (!function_exists('get_related_softwares')) {
     /**
      * @param $current_slug
      * @param $limit
      * @return mixed
      *
      */
-    function get_related_posts($current_slug, $limit)
+    function get_related_softwares($current_slug, $limit)
     {
-        return app(PostInterface::class)->getRelated($current_slug, $limit);
+        return app(SoftwareInterface::class)->getRelated($current_slug, $limit);
     }
 }
 
-if (!function_exists('get_posts_by_category')) {
+if (!function_exists('get_softwares_by_category')) {
     /**
      * @param $category_id
      * @param $paginate
@@ -55,60 +55,60 @@ if (!function_exists('get_posts_by_category')) {
      * @return mixed
      *
      */
-    function get_posts_by_category($category_id, $paginate = 12, $limit = 0)
+    function get_softwares_by_category($category_id, $paginate = 12, $limit = 0)
     {
-        return app(PostInterface::class)->getByCategory($category_id, $paginate, $limit);
+        return app(SoftwareInterface::class)->getByCategory($category_id, $paginate, $limit);
     }
 }
 
-if (!function_exists('get_posts_by_tag')) {
+if (!function_exists('get_softwares_by_tag')) {
     /**
      * @param $slug
      * @param $paginate
      * @return mixed
      *
      */
-    function get_posts_by_tag($slug, $paginate = 12)
+    function get_softwares_by_tag($slug, $paginate = 12)
     {
-        return app(PostInterface::class)->getByTag($slug, $paginate);
+        return app(SoftwareInterface::class)->getByTag($slug, $paginate);
     }
 }
 
-if (!function_exists('get_posts_by_user')) {
+if (!function_exists('get_softwares_by_user')) {
     /**
      * @param $author_id
      * @param $paginate
      * @return mixed
      *
      */
-    function get_posts_by_user($author_id, $paginate = 12)
+    function get_softwares_by_user($author_id, $paginate = 12)
     {
-        return app(PostInterface::class)->getByUserId($author_id, $paginate);
+        return app(SoftwareInterface::class)->getByUserId($author_id, $paginate);
     }
 }
 
-if (!function_exists('get_all_posts')) {
+if (!function_exists('get_all_softwares')) {
     /**
      * @param boolean $active
      * @param int $perPage
      * @return mixed
      *
      */
-    function get_all_posts($active = true, $perPage = 12)
+    function get_all_softwares($active = true, $perPage = 12)
     {
-        return app(PostInterface::class)->getAllPosts($perPage, $active);
+        return app(SoftwareInterface::class)->getAllSoftwares($perPage, $active);
     }
 }
 
-if (!function_exists('get_recent_posts')) {
+if (!function_exists('get_recent_softwares')) {
     /**
      * @param $limit
      * @return mixed
      *
      */
-    function get_recent_posts($limit)
+    function get_recent_softwares($limit)
     {
-        return app(PostInterface::class)->getRecentPosts($limit);
+        return app(SoftwareInterface::class)->getRecentSoftwares($limit);
     }
 }
 
@@ -161,16 +161,16 @@ if (!function_exists('get_popular_tags')) {
     }
 }
 
-if (!function_exists('get_popular_posts')) {
+if (!function_exists('get_popular_softwares')) {
     /**
      * @param integer $limit
      * @param array $args
      * @return mixed
      *
      */
-    function get_popular_posts($limit = 10, array $args = [])
+    function get_popular_softwares($limit = 10, array $args = [])
     {
-        return app(PostInterface::class)->getPopularPosts($limit, $args);
+        return app(SoftwareInterface::class)->getPopularSoftwares($limit, $args);
     }
 }
 
@@ -243,7 +243,7 @@ if (!function_exists('register_post_format')) {
      */
     function register_post_format(array $formats)
     {
-        PostFormat::registerPostFormat($formats);
+        SoftwareFormat::registerSoftwareFormat($formats);
     }
 }
 
@@ -255,6 +255,6 @@ if (!function_exists('get_post_formats')) {
      */
     function get_post_formats($convert_to_list = false)
     {
-        return PostFormat::getPostFormats($convert_to_list);
+        return SoftwareFormat::getSoftwareFormats($convert_to_list);
     }
 }

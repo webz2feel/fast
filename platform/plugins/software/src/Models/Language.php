@@ -51,7 +51,7 @@ class Language extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function posts()
+    public function softwares()
     {
         return $this->belongsToMany(Software::class, 'software_language_pivot', 'software_id', 'language_id');
     }

@@ -7,10 +7,10 @@ use Fast\Base\Forms\FormBuilder;
 use Fast\Base\Http\Controllers\BaseController;
 use Fast\Base\Http\Responses\BaseHttpResponse;
 use Fast\Base\Traits\HasDeleteManyItemsTrait;
-use Fast\Software\Forms\TagForm;
-use Fast\Software\Tables\TagTable;
+use Fast\Software\Forms\SystemForm;
+use Fast\Software\Repositories\Interfaces\SystemInterface;
+use Fast\Software\Tables\SystemTable;
 use Fast\Software\Http\Requests\SystemRequest;
-use Fast\Software\Repositories\Interfaces\TagInterface;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,33 +18,33 @@ use Fast\Base\Events\CreatedContentEvent;
 use Fast\Base\Events\DeletedContentEvent;
 use Fast\Base\Events\UpdatedContentEvent;
 
-class TagController extends BaseController
+class SystemController extends BaseController
 {
 
     use HasDeleteManyItemsTrait;
 
     /**
-     * @var TagInterface
+     * @var SystemInterface
      */
-    protected $tagRepository;
+    protected $systemRepository;
 
     /**
-     * @param TagInterface $tagRepository
+     * @param SystemInterface $systemRepository
      */
-    public function __construct(TagInterface $tagRepository)
+    public function __construct(SystemInterface $systemRepository)
     {
-        $this->tagRepository = $tagRepository;
+        $this->systemRepository = $systemRepository;
     }
 
     /**
-     * @param TagTable $dataTable
+     * @param SystemTable $dataTable
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      *
      * @throws \Throwable
      */
-    public function index(TagTable $dataTable)
+    public function index(SystemTable $dataTable)
     {
-        page_title()->setTitle(trans('plugins/software::tags.menu'));
+        page_title()->setTitle(trans('plugins/software::system.menu'));
 
         return $dataTable->renderTable();
     }
@@ -54,9 +54,9 @@ class TagController extends BaseController
      */
     public function create(FormBuilder $formBuilder)
     {
-        page_title()->setTitle(trans('plugins/software::tags.create'));
+        page_title()->setTitle(trans('plugins/software::system.create'));
 
-        return $formBuilder->create(TagForm::class)->renderForm();
+        return $formBuilder->create(SystemForm::class)->renderForm();
     }
 
     /**
@@ -67,13 +67,13 @@ class TagController extends BaseController
      */
     public function store(SystemRequest $request, BaseHttpResponse $response)
     {
-        $tag = $this->tagRepository->createOrUpdate(array_merge($request->input(),
+        $tag = $this->systemRepository->createOrUpdate(array_merge($request->input(),
             ['author_id' => Auth::user()->getKey()]));
-        event(new CreatedContentEvent(TAG_MODULE_SCREEN_NAME, $request, $tag));
+        event(new CreatedContentEvent(SYSTEM_MODULE_SCREEN_NAME, $request, $tag));
 
         return $response
-            ->setPreviousUrl(route('software-tags.index'))
-            ->setNextUrl(route('software-tags.edit', $tag->id))
+            ->setPreviousUrl(route('systems.index'))
+            ->setNextUrl(route('systems.edit', $tag->id))
             ->setMessage(trans('core/base::notices.create_success_message'));
     }
 
@@ -85,13 +85,13 @@ class TagController extends BaseController
      */
     public function edit($id, Request $request, FormBuilder $formBuilder)
     {
-        $tag = $this->tagRepository->findOrFail($id);
+        $tag = $this->systemRepository->findOrFail($id);
 
         event(new BeforeEditContentEvent($request, $tag));
 
-        page_title()->setTitle(trans('plugins/software::tags.edit') . ' "' . $tag->name . '"');
+        page_title()->setTitle(trans('plugins/software::system.edit') . ' "' . $tag->name . '"');
 
-        return $formBuilder->create(TagForm::class, ['model' => $tag])->renderForm();
+        return $formBuilder->create(SystemForm::class, ['model' => $tag])->renderForm();
     }
 
     /**
@@ -103,14 +103,14 @@ class TagController extends BaseController
      */
     public function update($id, SystemRequest $request, BaseHttpResponse $response)
     {
-        $tag = $this->tagRepository->findOrFail($id);
+        $tag = $this->systemRepository->findOrFail($id);
         $tag->fill($request->input());
 
-        $this->tagRepository->createOrUpdate($tag);
-        event(new UpdatedContentEvent(TAG_MODULE_SCREEN_NAME, $request, $tag));
+        $this->systemRepository->createOrUpdate($tag);
+        event(new UpdatedContentEvent(SYSTEM_MODULE_SCREEN_NAME, $request, $tag));
 
         return $response
-            ->setPreviousUrl(route('software-tags.index'))
+            ->setPreviousUrl(route('systems.index'))
             ->setMessage(trans('core/base::notices.update_success_message'));
     }
 
@@ -123,16 +123,16 @@ class TagController extends BaseController
     public function destroy($id, Request $request, BaseHttpResponse $response)
     {
         try {
-            $tag = $this->tagRepository->findOrFail($id);
-            $this->tagRepository->delete($tag);
+            $tag = $this->systemRepository->findOrFail($id);
+            $this->systemRepository->delete($tag);
 
-            event(new DeletedContentEvent(SOFTWARE_TAG_MODULE_SCREEN_NAME, $request, $tag));
+            event(new DeletedContentEvent(SYSTEM_MODULE_SCREEN_NAME, $request, $tag));
 
-            return $response->setMessage(trans('plugins/software::tags.deleted'));
+            return $response->setMessage(trans('plugins/software::system.deleted'));
         } catch (Exception $exception) {
             return $response
                 ->setError()
-                ->setMessage(trans('plugins/software::tags.cannot_delete'));
+                ->setMessage(trans('plugins/software::system.cannot_delete'));
         }
     }
 
@@ -145,7 +145,7 @@ class TagController extends BaseController
      */
     public function deletes(Request $request, BaseHttpResponse $response)
     {
-        return $this->executeDeleteItems($request, $response, $this->tagRepository, SOFTWARE_TAG_MODULE_SCREEN_NAME);
+        return $this->executeDeleteItems($request, $response, $this->systemRepository, SYSTEM_MODULE_SCREEN_NAME);
     }
 
     /**
@@ -153,8 +153,8 @@ class TagController extends BaseController
      *
      * @return array
      */
-    public function getAllTags()
+    public function getAllSystems()
     {
-        return $this->tagRepository->pluck('name');
+        return $this->systemRepository->pluck('name');
     }
 }

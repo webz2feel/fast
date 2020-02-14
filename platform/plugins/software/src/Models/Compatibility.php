@@ -51,7 +51,7 @@ class Compatibility extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function posts()
+    public function softwares()
     {
         return $this->belongsToMany(Software::class, 'software_compatibility_pivot', 'software_id', 'compatibility_id');
     }

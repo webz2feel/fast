@@ -4,10 +4,10 @@ namespace Fast\Software\Forms;
 
 use Fast\Base\Enums\BaseStatusEnum;
 use Fast\Base\Forms\FormAbstract;
-use Fast\Software\Http\Requests\SystemRequest;
-use Fast\Software\Models\Tag;
+use Fast\Software\Http\Requests\CompatibilityRequest;
+use Fast\Software\Models\Compatibility;
 
-class TagForm extends FormAbstract
+class CompatibilityForm extends FormAbstract
 {
 
     /**
@@ -17,8 +17,8 @@ class TagForm extends FormAbstract
     public function buildForm()
     {
         $this
-            ->setupModel(new Tag)
-            ->setValidatorClass(SystemRequest::class)
+            ->setupModel(new Compatibility)
+            ->setValidatorClass(CompatibilityRequest::class)
             ->withCustomFields()
             ->add('name', 'text', [
                 'label'      => trans('core/base::forms.name'),

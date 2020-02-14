@@ -51,7 +51,7 @@ class System extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function posts()
+    public function softwares()
     {
         return $this->belongsToMany(Software::class, 'software_system_pivot', 'software_id', 'system_id');
     }

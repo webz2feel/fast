@@ -10,10 +10,22 @@ use Fast\Software\Models\Software;
 use Fast\Software\Models\System;
 use Fast\Software\Models\Tag;
 use Fast\Software\Repositories\Caches\CategoryCacheDecorator;
+use Fast\Software\Repositories\Caches\CompatibilityCacheDecorator;
+use Fast\Software\Repositories\Caches\LanguageCacheDecorator;
+use Fast\Software\Repositories\Caches\SoftwareCacheDecorator;
+use Fast\Software\Repositories\Caches\SystemCacheDecorator;
 use Fast\Software\Repositories\Caches\TagCacheDecorator;
 use Fast\Software\Repositories\Eloquent\CategoryRepository;
+use Fast\Software\Repositories\Eloquent\CompatibilityRepository;
+use Fast\Software\Repositories\Eloquent\LanguageRepository;
+use Fast\Software\Repositories\Eloquent\SoftwareRepository;
+use Fast\Software\Repositories\Eloquent\SystemRepository;
 use Fast\Software\Repositories\Eloquent\TagRepository;
 use Fast\Software\Repositories\Interfaces\CategoryInterface;
+use Fast\Software\Repositories\Interfaces\CompatibilityInterface;
+use Fast\Software\Repositories\Interfaces\LanguageInterface;
+use Fast\Software\Repositories\Interfaces\SoftwareInterface;
+use Fast\Software\Repositories\Interfaces\SystemInterface;
 use Fast\Software\Repositories\Interfaces\TagInterface;
 use Illuminate\Routing\Events\RouteMatched;
 use Illuminate\Support\ServiceProvider;
@@ -27,11 +39,23 @@ class SoftwareServiceProvider extends ServiceProvider
 
     public function register()
     {
+        $this->app->bind(SoftwareInterface::class, function(){
+            return new SoftwareCacheDecorator(new SoftwareRepository(new Software()));
+        });
         $this->app->bind(CategoryInterface::class, function() {
             return new CategoryCacheDecorator(new CategoryRepository(new Category()));
         });
         $this->app->bind(TagInterface::class, function() {
             return new TagCacheDecorator(new TagRepository(new Tag()));
+        });
+        $this->app->bind(SystemInterface::class, function() {
+           return new SystemCacheDecorator(new SystemRepository(new System()));
+        });
+        $this->app->bind(CompatibilityInterface::class, function() {
+            return new CompatibilityCacheDecorator(new CompatibilityRepository(new Compatibility()));
+        });
+        $this->app->bind(LanguageInterface::class, function() {
+            return new LanguageCacheDecorator(new LanguageRepository(new SoftwareLanguage()));
         });
         Helper::autoload(__DIR__ . '/../../helpers');
     }
@@ -55,7 +79,7 @@ class SoftwareServiceProvider extends ServiceProvider
                        'parent_id'   => null,
                        'name'        => 'plugins/software::base.menu_name',
                        'icon'        => 'fa fa-cube',
-                       'url'         => route('software.index'),
+                       'url'         => route('softwares.index'),
                        'permissions' => ['softwares.index'],
                     ])
                     ->registerItem([
@@ -64,8 +88,8 @@ class SoftwareServiceProvider extends ServiceProvider
                        'parent_id'   => 'cms-plugins-software',
                        'name'        => 'plugins/software::softwares.menu_name',
                        'icon'        => null,
-                       'url'         => route('software.index'),
-                       'permissions' => ['software.index'],
+                       'url'         => route('softwares.index'),
+                       'permissions' => ['softwares.index'],
                    ])
                     ->registerItem([
                        'id'          => 'cms-plugins-software-categories',
