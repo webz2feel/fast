@@ -70,6 +70,8 @@ class Software extends BaseModel
         'status',
         'author_id',
         'author_type',
+        'download_link_32',
+        'download_link_64',
     ];
 
     /**

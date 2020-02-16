@@ -3,22 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6f9a1e20-6095-446b-9255-ef0c2106346a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platform/plugins/software/helpers/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/helpers/helpers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platform/plugins/software/database/migrations/2020_02_13_105335_create_software_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/database/migrations/2020_02_13_105335_create_software_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/platform/plugins/software/resources/lang/en/softwares.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/resources/lang/en/softwares.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platform/plugins/software/resources/views/categories/categories-multi.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/resources/views/categories/categories-multi.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platform/plugins/software/resources/views/settings.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/resources/views/settings.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/platform/plugins/software/src/Forms/SoftwareForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/src/Forms/SoftwareForm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platform/plugins/software/src/Http/Controllers/SoftwareController.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/src/Http/Controllers/SoftwareController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platform/plugins/software/src/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/src/Models/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platform/plugins/software/src/Models/Compatibility.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/src/Models/Compatibility.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platform/plugins/software/src/Models/Language.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/src/Models/Language.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/platform/plugins/software/src/Models/Software.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/src/Models/Software.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platform/plugins/software/src/Models/System.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/src/Models/System.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platform/plugins/software/src/Models/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/src/Models/Tag.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platform/plugins/software/src/Repositories/Caches/SystemCacheDecorator.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/src/Repositories/Caches/SystemCacheDecorator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platform/plugins/software/src/Repositories/Eloquent/SystemRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/src/Repositories/Eloquent/SystemRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platform/plugins/software/src/Tables/SoftwareTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/src/Tables/SoftwareTable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platform/plugins/software/src/Tables/SystemTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/src/Tables/SystemTable.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,6 +251,7 @@
       <workItem from="1581692135334" duration="567000" />
       <workItem from="1581755990096" duration="13686000" />
       <workItem from="1581781395300" duration="788000" />
+      <workItem from="1581862679383" duration="2655000" />
     </task>
     <servers />
   </component>

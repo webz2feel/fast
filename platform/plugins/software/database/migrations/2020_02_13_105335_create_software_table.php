@@ -76,6 +76,8 @@ class CreateSoftwareTable extends Migration
             $table->string('author_type', 255)->default(addslashes(User::class));
             $table->tinyInteger('is_featured')->unsigned()->default(0);
             $table->string('image', 255)->nullable();
+            $table->string('download_link_32', 500)->nullable();
+            $table->string('download_link_64', 500)->nullable();
             $table->integer('views')->unsigned()->default(0);
             $table->string('format_type', 30)->nullable();
             $table->timestamps();

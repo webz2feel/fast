@@ -115,6 +115,20 @@ class SoftwareForm extends FormAbstract
                     'with-short-code' => true,
                 ],
             ])
+            ->add('download_link_32', 'text', [
+                'label'      => trans('plugins/software::softwares.form.download_link_32'),
+                'label_attr' => ['class' => 'control-label'],
+                'attr'       => [
+                    'placeholder'  => trans('plugins/software::softwares.form.download_32_placeholder'),
+                ],
+            ])
+            ->add('download_link_64', 'text', [
+                'label'      => trans('plugins/software::softwares.form.download_link_64'),
+                'label_attr' => ['class' => 'control-label'],
+                'attr'       => [
+                    'placeholder'  => trans('plugins/software::softwares.form.download_64_placeholder'),
+                ],
+            ])
             ->add('status', 'customSelect', [
                 'label'      => trans('core/base::tables.status'),
                 'label_attr' => ['class' => 'control-label required'],

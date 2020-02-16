@@ -20,6 +20,10 @@ return [
         'is_featured'             => 'Is featured?',
         'note'                    => 'Note content',
         'format_type'             => 'Format',
+        'download_link_32'        => 'Download link 32 bit',
+        'download_link_64'        => 'Download link 64 bit',
+        'download_32_placeholder' => 'Download link 32 bit',
+        'download_64_placeholder' => 'Download link 64 bit'
     ],
     'cannot_delete'       => 'Software could not be deleted',
     'software_deleted'    => 'Software deleted',
