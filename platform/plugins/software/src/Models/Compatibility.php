@@ -53,7 +53,7 @@ class Compatibility extends BaseModel
      */
     public function softwares()
     {
-        return $this->belongsToMany(Software::class, 'software_compatibility_pivot', 'software_id', 'compatibility_id');
+        return $this->belongsToMany(Software::class, 'software_compatibility_pivot', 'compatibility_id', 'software_id');
     }
 
     protected static function boot()

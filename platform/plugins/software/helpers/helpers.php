@@ -3,7 +3,10 @@
 use Fast\Base\Enums\BaseStatusEnum;
 use Fast\Base\Supports\SortItemsWithChildrenHelper;
 use Fast\Software\Repositories\Interfaces\CategoryInterface;
+use Fast\Software\Repositories\Interfaces\CompatibilityInterface;
+use Fast\Software\Repositories\Interfaces\LanguageInterface;
 use Fast\Software\Repositories\Interfaces\SoftwareInterface;
+use Fast\Software\Repositories\Interfaces\SystemInterface;
 use Fast\Software\Repositories\Interfaces\TagInterface;
 use Fast\Software\Supports\SoftwareFormat;
 use Illuminate\Support\Arr;
@@ -137,6 +140,42 @@ if (!function_exists('get_all_categories')) {
     }
 }
 
+if (!function_exists('get_all_systems')) {
+    /**
+     * @param array $condition
+     * @return mixed
+     *
+     */
+    function get_all_systems(array $condition = [])
+    {
+        return app(SystemInterface::class)->getAllSystems($condition);
+    }
+}
+
+if (!function_exists('get_all_software_languages')) {
+    /**
+     * @param array $condition
+     * @return mixed
+     *
+     */
+    function get_all_software_languages(array $condition = [])
+    {
+        return app(LanguageInterface::class)->getAllLanguages($condition);
+    }
+}
+
+if (!function_exists('get_all_compatibilities')) {
+    /**
+     * @param array $condition
+     * @return mixed
+     *
+     */
+    function get_all_compatibilities(array $condition = [])
+    {
+        return app(CompatibilityInterface::class)->getAllCompatibilities($condition);
+    }
+}
+
 if (!function_exists('get_all_tags')) {
     /**
      * @param boolean $active
@@ -217,12 +256,12 @@ if (!function_exists('get_software_categories')) {
     }
 }
 
-if (!function_exists('get_categories_with_children')) {
+if (!function_exists('get_software_categories_with_children')) {
     /**
      * @return array
      * @throws Exception
      */
-    function get_categories_with_children()
+    function get_software_categories_with_children()
     {
         $categories = app(CategoryInterface::class)
             ->getAllCategoriesWithChildren(['status' => BaseStatusEnum::PUBLISHED], [], ['id', 'name', 'parent_id']);

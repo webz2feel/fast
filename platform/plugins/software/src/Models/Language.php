@@ -53,7 +53,7 @@ class Language extends BaseModel
      */
     public function softwares()
     {
-        return $this->belongsToMany(Software::class, 'software_language_pivot', 'software_id', 'language_id');
+        return $this->belongsToMany(Software::class, 'software_language_pivot', 'language_id', 'software_id');
     }
 
     protected static function boot()

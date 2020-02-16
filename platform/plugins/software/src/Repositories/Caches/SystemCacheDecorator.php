@@ -2,10 +2,10 @@
 
 namespace Fast\Software\Repositories\Caches;
 
-use Fast\Software\Repositories\Interfaces\CompatibilityInterface;
+use Fast\Software\Repositories\Interfaces\SystemInterface;
 use Fast\Support\Repositories\Caches\CacheAbstractDecorator;
 
-class SystemCacheDecorator extends CacheAbstractDecorator implements CompatibilityInterface
+class SystemCacheDecorator extends CacheAbstractDecorator implements SystemInterface
 {
     /**
      * {@inheritdoc}

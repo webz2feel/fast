@@ -53,7 +53,7 @@ class System extends BaseModel
      */
     public function softwares()
     {
-        return $this->belongsToMany(Software::class, 'software_system_pivot', 'software_id', 'system_id');
+        return $this->belongsToMany(Software::class, 'software_system_pivot', 'system_id', 'software_id');
     }
 
     protected static function boot()

@@ -6,9 +6,13 @@ use Assets;
 use Fast\Base\Enums\BaseStatusEnum;
 use Fast\Base\Forms\FormAbstract;
 use Fast\Software\Forms\Fields\CategoryMultiField;
+use Fast\Software\Forms\Fields\CompatibilityMultiField;
+use Fast\Software\Forms\Fields\LanguageMultiField;
+use Fast\Software\Forms\Fields\SystemMultiField;
 use Fast\Software\Http\Requests\SoftwareRequest;
 use Fast\Software\Models\Software;
 use Fast\Software\Repositories\Interfaces\CategoryInterface;
+use Fast\Software\Repositories\Interfaces\SystemInterface;
 
 class SoftwareForm extends FormAbstract
 {
@@ -41,6 +45,21 @@ class SoftwareForm extends FormAbstract
                 ->all();
         }
 
+        $selectedSystems = [];
+        if ($this->getModel()) {
+            $selectedSystems = $this->getModel()->systems()->pluck('system_id')->all();
+        }
+
+        $selectedLanguages = [];
+        if ($this->getModel()) {
+            $selectedLanguages = $this->getModel()->languages()->pluck('language_id')->all();
+        }
+
+        $selectedCompatibilities = [];
+        if ($this->getModel()) {
+            $selectedCompatibilities = $this->getModel()->compatibilities()->pluck('compatibility_id')->all();
+        }
+
         $tags = null;
 
         if ($this->getModel()) {
@@ -50,6 +69,15 @@ class SoftwareForm extends FormAbstract
 
         if (!$this->formHelper->hasCustomField('categoryMulti')) {
             $this->formHelper->addCustomField('categoryMulti', CategoryMultiField::class);
+        }
+        if (!$this->formHelper->hasCustomField('systemMulti')) {
+            $this->formHelper->addCustomField('systemMulti', SystemMultiField::class);
+        }
+        if (!$this->formHelper->hasCustomField('langMulti')) {
+            $this->formHelper->addCustomField('langMulti', LanguageMultiField::class);
+        }
+        if (!$this->formHelper->hasCustomField('compMulti')) {
+            $this->formHelper->addCustomField('compMulti', CompatibilityMultiField::class);
         }
 
         $this
@@ -93,28 +121,46 @@ class SoftwareForm extends FormAbstract
                 'choices'    => BaseStatusEnum::labels(),
             ])
             ->add('format_type', 'customRadio', [
-                'label'      => trans('plugins/blog::posts.form.format_type'),
+                'label'      => trans('plugins/software::softwares.form.format_type'),
                 'label_attr' => ['class' => 'control-label required'],
                 'choices'    => get_post_formats(true),
             ])
             ->add('categories[]', 'categoryMulti', [
-                'label'      => trans('plugins/blog::posts.form.categories'),
+                'label'      => trans('plugins/software::softwares.form.categories'),
                 'label_attr' => ['class' => 'control-label required'],
-                'choices'    => get_categories_with_children(),
+                'choices'    => get_software_categories_with_children(),
                 'value'      => old('categories', $selectedCategories),
+            ])
+            ->add('systems[]', 'systemMulti', [
+                'label'      => trans('plugins/software::softwares.form.systems'),
+                'label_attr' => ['class' => 'control-label'],
+                'choices'    => get_all_systems(['status' => 'published']),
+                'value'      => old('systems', $selectedSystems),
+            ])
+            ->add('languages[]', 'langMulti', [
+                'label'      => trans('plugins/software::softwares.form.languages'),
+                'label_attr' => ['class' => 'control-label'],
+                'choices'    => get_all_software_languages(['status' => 'published']),
+                'value'      => old('languages', $selectedLanguages),
+            ])
+            ->add('compatibilities[]', 'compMulti', [
+                'label'      => trans('plugins/software::softwares.form.compatibilities'),
+                'label_attr' => ['class' => 'control-label'],
+                'choices'    => get_all_compatibilities(['status' => 'published']),
+                'value'      => old('compatibilities', $selectedCompatibilities),
             ])
             ->add('image', 'mediaImage', [
                 'label'      => trans('core/base::forms.image'),
                 'label_attr' => ['class' => 'control-label'],
             ])
             ->add('tag', 'text', [
-                'label'      => trans('plugins/blog::posts.form.tags'),
+                'label'      => trans('plugins/software::softwares.form.tags'),
                 'label_attr' => ['class' => 'control-label'],
                 'attr'       => [
                     'class'       => 'form-control',
                     'id'          => 'tags',
                     'data-role'   => 'tagsinput',
-                    'placeholder' => trans('plugins/blog::posts.form.tags_placeholder'),
+                    'placeholder' => trans('plugins/software::softwares.form.tags_placeholder'),
                 ],
                 'value'      => $tags,
                 'help_block' => [

@@ -11,7 +11,13 @@ use Fast\Software\Forms\SoftwareForm;
 use Fast\Software\Http\Requests\SoftwareRequest;
 use Fast\Software\Models\Software;
 use Fast\Software\Repositories\Interfaces\CategoryInterface;
+use Fast\Software\Repositories\Interfaces\CompatibilityInterface;
+use Fast\Software\Repositories\Interfaces\LanguageInterface;
 use Fast\Software\Repositories\Interfaces\SoftwareInterface;
+use Fast\Software\Repositories\Interfaces\SystemInterface;
+use Fast\Software\Services\StoreCompatibilityService;
+use Fast\Software\Services\StoreLanguageService;
+use Fast\Software\Services\StoreSystemService;
 use Fast\Software\Tables\SoftwareTable;
 use Fast\Software\Repositories\Interfaces\TagInterface;
 use Fast\Software\Services\StoreCategoryService;
@@ -42,20 +48,41 @@ class SoftwareController extends BaseController
      * @var CategoryInterface
      */
     protected $categoryRepository;
+    /**
+     * @var CompatibilityInterface
+     */
+    protected $compatibilityRepository;
+    /**
+     * @var LanguageInterface
+     */
+    protected $languageRepository;
+    /**
+     * @var SystemInterface
+     */
+    protected $systemRepository;
 
     /**
-     * @param SoftwareInterface $softwareRepository
-     * @param TagInterface $tagRepository
-     * @param CategoryInterface $categoryRepository
+     * @param  SoftwareInterface  $softwareRepository
+     * @param  TagInterface  $tagRepository
+     * @param  CategoryInterface  $categoryRepository
+     * @param  SystemInterface  $systemRepository
+     * @param  LanguageInterface  $languageRepository
+     * @param  CompatibilityInterface  $compatibilityRepository
      */
     public function __construct(
         SoftwareInterface $softwareRepository,
         TagInterface $tagRepository,
-        CategoryInterface $categoryRepository
+        CategoryInterface $categoryRepository,
+        SystemInterface $systemRepository,
+        LanguageInterface $languageRepository,
+        CompatibilityInterface $compatibilityRepository
     ) {
         $this->softwareRepository = $softwareRepository;
         $this->tagRepository = $tagRepository;
         $this->categoryRepository = $categoryRepository;
+        $this->systemRepository = $systemRepository;
+        $this->languageRepository = $languageRepository;
+        $this->compatibilityRepository = $compatibilityRepository;
     }
 
     /**
@@ -82,16 +109,23 @@ class SoftwareController extends BaseController
     }
 
     /**
-     * @param SoftwareRequest $request
-     * @param StoreTagService $tagService
-     * @param StoreCategoryService $categoryService
-     * @param BaseHttpResponse $response
+     * @param  SoftwareRequest  $request
+     * @param  StoreTagService  $tagService
+     * @param  StoreCategoryService  $categoryService
+     * @param  StoreSystemService  $systemService
+     * @param  StoreLanguageService  $languageService
+     * @param  StoreCompatibilityService  $compatibilityService
+     * @param  BaseHttpResponse  $response
+     *
      * @return BaseHttpResponse
      */
     public function store(
         SoftwareRequest $request,
         StoreTagService $tagService,
         StoreCategoryService $categoryService,
+        StoreSystemService $systemService,
+        StoreLanguageService $languageService,
+        StoreCompatibilityService $compatibilityService,
         BaseHttpResponse $response
     ) {
         /**
@@ -107,7 +141,9 @@ class SoftwareController extends BaseController
         $tagService->execute($request, $software);
 
         $categoryService->execute($request, $software);
-
+        $systemService->execute($request, $software);
+        $languageService->execute($request, $software);
+        $compatibilityService->execute($request, $software);
         return $response
             ->setPreviousUrl(route('softwares.index'))
             ->setNextUrl(route('softwares.edit', $software->id))
@@ -132,11 +168,15 @@ class SoftwareController extends BaseController
     }
 
     /**
-     * @param int $id
-     * @param SoftwareRequest $request
-     * @param StoreTagService $tagService
-     * @param StoreCategoryService $categoryService
-     * @param BaseHttpResponse $response
+     * @param  int  $id
+     * @param  SoftwareRequest  $request
+     * @param  StoreTagService  $tagService
+     * @param  StoreCategoryService  $categoryService
+     * @param  StoreSystemService  $systemService
+     * @param  StoreLanguageService  $languageService
+     * @param  StoreCompatibilityService  $compatibilityService
+     * @param  BaseHttpResponse  $response
+     *
      * @return BaseHttpResponse
      */
     public function update(
@@ -144,6 +184,9 @@ class SoftwareController extends BaseController
         SoftwareRequest $request,
         StoreTagService $tagService,
         StoreCategoryService $categoryService,
+        StoreSystemService $systemService,
+        StoreLanguageService $languageService,
+        StoreCompatibilityService $compatibilityService,
         BaseHttpResponse $response
     ) {
         $software = $this->softwareRepository->findOrFail($id);
@@ -158,7 +201,9 @@ class SoftwareController extends BaseController
         $tagService->execute($request, $software);
 
         $categoryService->execute($request, $software);
-
+        $systemService->execute($request, $software);
+        $languageService->execute($request, $software);
+        $compatibilityService->execute($request, $software);
         return $response
             ->setPreviousUrl(route('softwares.index'))
             ->setMessage(trans('core/base::notices.update_success_message'));

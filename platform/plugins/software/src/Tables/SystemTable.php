@@ -4,7 +4,7 @@ namespace Fast\Software\Tables;
 
 use Fast\Base\Enums\BaseStatusEnum;
 use Fast\Software\Models\System;
-use Fast\Software\Repositories\Interfaces\CompatibilityInterface;
+use Fast\Software\Repositories\Interfaces\SystemInterface;
 use Illuminate\Support\Facades\Auth;
 use Fast\Table\Abstracts\TableAbstract;
 use Illuminate\Contracts\Routing\UrlGenerator;
@@ -28,10 +28,10 @@ class SystemTable extends TableAbstract
      *
      * @param DataTables $table
      * @param UrlGenerator $urlGenerator
-     * @param  CompatibilityInterface $systemRepository
+     * @param  SystemInterface $systemRepository
      */
     public function __construct(DataTables $table, UrlGenerator $urlGenerator,
-        CompatibilityInterface $systemRepository)
+        SystemInterface $systemRepository)
     {
         $this->repository = $systemRepository;
         $this->setOption('id', 'table-systems');

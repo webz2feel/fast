@@ -1,0 +1,12 @@
+{
+    "name": "DigitalSoftware",
+    "description": "This is a basic theme",
+    "author": "Imran Ali",
+    "version": "1.0",
+    "required_plugins": [
+        "blog",
+        "contact",
+        "language",
+        "software"
+    ]
+}

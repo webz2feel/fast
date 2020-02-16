@@ -127,7 +127,7 @@ class SoftwareTable extends TableAbstract
     {
         $model = $this->repository->getModel();
         $query = $model
-            ->with(['software_categories'])
+            ->with(['categories'])
             ->select([
                          'softwares.id',
                          'softwares.name',

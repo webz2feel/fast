@@ -53,7 +53,7 @@ class Tag extends BaseModel
      */
     public function softwares()
     {
-        return $this->belongsToMany(Software::class, 'software_tags_pivot', 'software_id', 'tag_id');
+        return $this->belongsToMany(Software::class, 'software_tags_pivot', 'tag_id', 'software_id');
     }
 
     protected static function boot()

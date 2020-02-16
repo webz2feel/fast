@@ -92,7 +92,7 @@ class Software extends BaseModel
      */
     public function tags()
     {
-        return $this->belongsToMany(Tag::class, 'software_tags', 'tag_id', 'software_id');
+        return $this->belongsToMany(Tag::class, 'software_tags_pivot', 'software_id', 'tag_id');
     }
 
     /**
@@ -100,7 +100,7 @@ class Software extends BaseModel
      */
     public function categories()
     {
-        return $this->belongsToMany(Category::class, 'software_categories', 'category_id', 'software_id');
+        return $this->belongsToMany(Category::class, 'software_categories_pivot', 'software_id', 'category_id');
     }
 
     /**
@@ -108,7 +108,7 @@ class Software extends BaseModel
      */
     public function systems()
     {
-        return $this->belongsToMany(System::class, 'software_system_pivot', 'system_id', 'software_id');
+        return $this->belongsToMany(System::class, 'software_system_pivot', 'software_id', 'system_id');
     }
 
     /**
@@ -116,7 +116,7 @@ class Software extends BaseModel
      */
     public function compatibilities()
     {
-        return $this->belongsToMany(Compatibility::class, 'software_compatibilities', 'compatibility_id', 'software_id');
+        return $this->belongsToMany(Compatibility::class, 'software_compatibility_pivot', 'software_id', 'compatibility_id');
     }
 
     /**
@@ -124,7 +124,7 @@ class Software extends BaseModel
      */
     public function languages()
     {
-        return $this->belongsToMany(Language::class, 'software_languages', 'language_id', 'software_id');
+        return $this->belongsToMany(Language::class, 'software_language_pivot', 'software_id', 'language_id');
     }
 
     public function author()

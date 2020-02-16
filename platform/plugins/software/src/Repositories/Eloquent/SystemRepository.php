@@ -3,10 +3,10 @@
 namespace Fast\Software\Repositories\Eloquent;
 
 use Fast\Base\Enums\BaseStatusEnum;
-use Fast\Software\Repositories\Interfaces\CompatibilityInterface;
+use Fast\Software\Repositories\Interfaces\SystemInterface;
 use Fast\Support\Repositories\Eloquent\RepositoriesAbstract;
 
-class SystemRepository extends RepositoriesAbstract implements CompatibilityInterface
+class SystemRepository extends RepositoriesAbstract implements SystemInterface
 {
 
     /**
@@ -16,9 +16,9 @@ class SystemRepository extends RepositoriesAbstract implements CompatibilityInte
     {
         $data = $this->model
             ->with('slugable')
-            ->where('system.status', '=', BaseStatusEnum::PUBLISHED)
-            ->select('system.*')
-            ->orderBy('system.created_at', 'desc');
+            ->where('software_systems.status', '=', BaseStatusEnum::PUBLISHED)
+            ->select('software_systems.*')
+            ->orderBy('software_systems.created_at', 'desc');
 
         return $this->applyBeforeExecuteQuery($data)->get();
     }
@@ -30,8 +30,8 @@ class SystemRepository extends RepositoriesAbstract implements CompatibilityInte
     {
         $data = $this->model
             ->with('slugable')
-            ->orderBy('system.id', 'DESC')
-            ->select('system.*')
+            ->orderBy('software_systems.id', 'DESC')
+            ->select('software_systems.*')
             ->limit($limit);
 
         return $this->applyBeforeExecuteQuery($data)->get();
@@ -42,9 +42,9 @@ class SystemRepository extends RepositoriesAbstract implements CompatibilityInte
      */
     public function getAllSystems($active = true)
     {
-        $data = $this->model->select('system.*');
+        $data = $this->model->select('software_systems.*');
         if ($active) {
-            $data = $data->where(['system.status' => BaseStatusEnum::PUBLISHED]);
+            $data = $data->where(['software_systems.status' => BaseStatusEnum::PUBLISHED]);
         }
 
         return $this->applyBeforeExecuteQuery($data)->get();

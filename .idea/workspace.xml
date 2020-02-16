@@ -2,25 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f9a1e20-6095-446b-9255-ef0c2106346a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/fast.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fast.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platform/core/base/src/Traits/HasDeleteManyItemsTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/core/base/src/Traits/HasDeleteManyItemsTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platform/plugins/software/config/permissions.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/config/permissions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/platform/plugins/software/helpers/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/helpers/helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platform/plugins/software/resources/views/categories/actions.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/resources/views/categories/actions.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platform/plugins/software/resources/views/tags/partials/menu-options.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/resources/views/tags/partials/menu-options.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platform/plugins/software/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platform/plugins/software/src/Providers/SoftwareServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/src/Providers/SoftwareServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platform/plugins/software/resources/lang/en/softwares.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/resources/lang/en/softwares.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platform/plugins/software/resources/views/categories/categories-multi.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/resources/views/categories/categories-multi.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platform/plugins/software/resources/views/settings.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/resources/views/settings.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platform/plugins/software/src/Forms/SoftwareForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/src/Forms/SoftwareForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platform/plugins/software/src/Http/Controllers/SoftwareController.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/src/Http/Controllers/SoftwareController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platform/plugins/software/src/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/src/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platform/plugins/software/src/Models/Compatibility.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/src/Models/Compatibility.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platform/plugins/software/src/Models/Language.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/src/Models/Language.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platform/plugins/software/src/Models/Software.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/src/Models/Software.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platform/plugins/software/src/Models/System.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/src/Models/System.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platform/plugins/software/src/Models/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/src/Models/Tag.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platform/plugins/software/src/Repositories/Caches/SystemCacheDecorator.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/src/Repositories/Caches/SystemCacheDecorator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platform/plugins/software/src/Repositories/Eloquent/SystemRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/src/Repositories/Eloquent/SystemRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platform/plugins/software/src/Tables/SoftwareTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/src/Tables/SoftwareTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platform/plugins/software/src/Tables/SystemTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/platform/plugins/software/src/Tables/SystemTable.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -214,8 +219,17 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/platform/plugins/software/src/Services/Abstracts" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/platform/plugins/software/src/Services/Abstracts" />
+      <recent name="$PROJECT_DIR$/platform/plugins/software/src/Services" />
+      <recent name="$PROJECT_DIR$/platform/plugins/software/resources/views" />
+      <recent name="$PROJECT_DIR$/platform/plugins/software/src/Forms/Fields" />
+      <recent name="$PROJECT_DIR$/platform/plugins/software/resources/views/systems" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -245,7 +259,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581611403895</updated>
-      <workItem from="1581611421857" duration="11582000" />
+      <workItem from="1581611421857" duration="11869000" />
+      <workItem from="1581692135334" duration="567000" />
+      <workItem from="1581755990096" duration="13686000" />
+      <workItem from="1581781395300" duration="788000" />
     </task>
     <servers />
   </component>
@@ -253,6 +270,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="426" y="23" key="#phpunit.xml" timestamp="1581775210090">
+      <screen x="0" y="23" width="1600" height="813" />
+    </state>
+    <state x="426" y="23" key="#phpunit.xml/-1280.23.1280.937/0.23.1600.813@0.23.1600.813" timestamp="1581775210090" />
     <state x="601" y="346" key="NewPhpFileDialog" timestamp="1581620687413">
       <screen x="0" y="23" width="1600" height="815" />
     </state>

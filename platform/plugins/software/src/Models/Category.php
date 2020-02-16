@@ -63,7 +63,7 @@ class Category extends BaseModel
      */
     public function softwares()
     {
-        return $this->belongsToMany(Software::class, 'software_categories_pivot', 'software_id', 'category_id')->with('slugable');
+        return $this->belongsToMany(Software::class, 'software_categories_pivot', 'category_id', 'software_id')->with('slugable');
     }
 
     /**
