@@ -10,18 +10,17 @@
         <meta http-equiv="content-language" content="en">
 
         <title>{{ SeoHelper::getTitle() }}</title>
-
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap">
         {!! Theme::header() !!}
     </head>
     <body>
-        {!! Theme::partial('header') !!}
-
-        <div class="container">
-            {!! Theme::content() !!}
+        <div class="wrapper">
+            {!! Theme::partial('header') !!}
+            <main class="main">
+                {!! Theme::content() !!}
+            </main>
+            {!! Theme::partial('footer') !!}
         </div>
-
-        {!! Theme::partial('footer') !!}
-
         {!! Theme::footer() !!}
     </body>
 </html>

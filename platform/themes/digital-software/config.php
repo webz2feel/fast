@@ -49,7 +49,8 @@ return [
             // $theme->asset()->usePath()->add('core', 'core.js');
             // $theme->asset()->usePath()->add('jquery', 'vendor/jquery/jquery.min.js');
             // $theme->asset()->usePath()->add('jquery-ui', 'vendor/jqueryui/jquery-ui.min.js', ['jquery']);
-
+            $theme->asset()->usePath()->add('bootstrap-css', 'libraries/bootstrap/bootstrap.min.v4.css');
+            $theme->asset()->usePath()->add('style-css', 'css/style.css');
             // Partial composer.
             // $theme->partialComposer('header', function($view)
             // {

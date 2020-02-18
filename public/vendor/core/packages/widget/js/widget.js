@@ -1,1 +1,282 @@
-!function(e){var t={};function o(n){if(t[n])return t[n].exports;var r=t[n]={i:n,l:!1,exports:{}};return e[n].call(r.exports,r,r.exports,o),r.l=!0,r.exports}o.m=e,o.c=t,o.d=function(e,t,n){o.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},o.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},o.t=function(e,t){if(1&t&&(e=o(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(o.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var r in e)o.d(n,r,function(t){return e[t]}.bind(null,r));return n},o.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return o.d(t,"a",t),t},o.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},o.p="/",o(o.s=382)}({382:function(e,t,o){e.exports=o(383)},383:function(e,t){function o(e,t){for(var o=0;o<t.length;o++){var n=t[o];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}var n=function(){function e(){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e)}var t,n,r;return t=e,(n=[{key:"init",value:function(){var e=[{name:"wrap-widgets",pull:"clone",put:!1}];$.each($(".sidebar-item"),(function(){e.push({name:"wrap-widgets",pull:!0,put:!0})}));var t=function(e){if(e.length>0){var t=[];$.each(e.find("li"),(function(e,o){t.push($(o).find("form").serialize())})),$.ajax({type:"POST",cache:!1,url:BWidget.routes.save_widgets_sidebar,data:{items:t,sidebar_id:e.data("id")},beforeSend:function(){Fast.showNotice("info",FastVariables.languages.notices_msg.processing_request)},success:function(t){t.error?Fast.showError(t.message):(e.find("ul").html(t.data),Fast.callScroll($(".list-page-select-widget")),Fast.showSuccess(t.message)),e.find(".widget_save i").remove()},error:function(t){Fast.handleError(t),e.find(".widget_save i").remove()}})}};e.forEach((function(e,o){Sortable.create(document.getElementById("wrap-widget-"+(o+1)),{sort:0!==o,group:e,delay:0,disabled:!1,store:null,animation:150,handle:".widget-handle",ghostClass:"sortable-ghost",chosenClass:"sortable-chosen",dataIdAttr:"data-id",forceFallback:!1,fallbackClass:"sortable-fallback",fallbackOnBody:!1,scroll:!0,scrollSensitivity:30,scrollSpeed:10,onEnd:function(e){e.from!==e.to&&t($(e.from).closest(".sidebar-item")),t($(e.item).closest(".sidebar-item"))}})}));var o=$("#wrap-widgets");o.on("click",".widget-control-delete",(function(e){e.preventDefault();var t=$(e.currentTarget),o=t.closest("li");t.addClass("button-loading"),$.ajax({type:"DELETE",cache:!1,url:BWidget.routes.delete,data:{widget_id:o.data("id"),position:o.data("position"),sidebar_id:t.closest(".sidebar-item").data("id")},beforeSend:function(){Fast.showNotice("info",FastVariables.languages.notices_msg.processing_request)},success:function(e){e.error?Fast.showError(e.message):(Fast.showSuccess(e.message),o.fadeOut().remove()),o.find(".widget-control-delete").removeClass("button-loading")},error:function(e){Fast.handleError(e),o.find(".widget-control-delete").removeClass("button-loading")}})})),o.on("click","#added-widget .widget-handle",(function(e){var t=$(e.currentTarget);t.closest("li").find(".widget-content").slideToggle(300),t.find(".fa").toggleClass("fa-caret-up"),t.find(".fa").toggleClass("fa-caret-down")})),o.on("click",".widget_save",(function(e){e.preventDefault();var o=$(e.currentTarget);o.addClass("button-loading"),t(o.closest(".sidebar-item"))})),Fast.callScroll($(".list-page-select-widget"))}}])&&o(t.prototype,n),r&&o(t,r),e}();$(document).ready((function(){(new n).init()}))}});
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 24);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./platform/packages/widget/resources/assets/js/widget.js":
+/*!****************************************************************!*\
+  !*** ./platform/packages/widget/resources/assets/js/widget.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var WidgetManagement =
+/*#__PURE__*/
+function () {
+  function WidgetManagement() {
+    _classCallCheck(this, WidgetManagement);
+  }
+
+  _createClass(WidgetManagement, [{
+    key: "init",
+    value: function init() {
+      var list_widgets = [{
+        name: 'wrap-widgets',
+        pull: 'clone',
+        put: false
+      }];
+      $.each($('.sidebar-item'), function () {
+        list_widgets.push({
+          name: 'wrap-widgets',
+          pull: true,
+          put: true
+        });
+      });
+
+      var saveWidget = function saveWidget(parentElement) {
+        if (parentElement.length > 0) {
+          var items = [];
+          $.each(parentElement.find('li'), function (index, widget) {
+            items.push($(widget).find('form').serialize());
+          });
+          $.ajax({
+            type: 'POST',
+            cache: false,
+            url: BWidget.routes.save_widgets_sidebar,
+            data: {
+              items: items,
+              sidebar_id: parentElement.data('id')
+            },
+            beforeSend: function beforeSend() {
+              Fast.showNotice('info', FastVariables.languages.notices_msg.processing_request);
+            },
+            success: function success(data) {
+              if (data.error) {
+                Fast.showError(data.message);
+              } else {
+                parentElement.find('ul').html(data.data);
+                Fast.callScroll($('.list-page-select-widget'));
+                Fast.showSuccess(data.message);
+              }
+
+              parentElement.find('.widget_save i').remove();
+            },
+            error: function error(data) {
+              Fast.handleError(data);
+              parentElement.find('.widget_save i').remove();
+            }
+          });
+        }
+      };
+
+      list_widgets.forEach(function (groupOpts, i) {
+        Sortable.create(document.getElementById('wrap-widget-' + (i + 1)), {
+          sort: i !== 0,
+          group: groupOpts,
+          delay: 0,
+          // time in milliseconds to define when the sorting should start
+          disabled: false,
+          // Disables the sortable if set to true.
+          store: null,
+          // @see Store
+          animation: 150,
+          // ms, animation speed moving items when sorting, `0` — without animation
+          handle: '.widget-handle',
+          ghostClass: 'sortable-ghost',
+          // Class name for the drop placeholder
+          chosenClass: 'sortable-chosen',
+          // Class name for the chosen item
+          dataIdAttr: 'data-id',
+          forceFallback: false,
+          // ignore the HTML5 DnD behaviour and force the fallback to kick in
+          fallbackClass: "sortable-fallback",
+          // Class name for the cloned DOM Element when using forceFallback
+          fallbackOnBody: false,
+          // Appends the cloned DOM Element into the Document's Body
+          scroll: true,
+          // or HTMLElement
+          scrollSensitivity: 30,
+          // px, how near the mouse must be to an edge to start scrolling.
+          scrollSpeed: 10,
+          // px
+          // dragging ended
+          onEnd: function onEnd(evt) {
+            if (evt.from !== evt.to) {
+              saveWidget($(evt.from).closest('.sidebar-item'));
+            }
+
+            saveWidget($(evt.item).closest('.sidebar-item'));
+          }
+        });
+      });
+      var widget_wrap = $('#wrap-widgets');
+      widget_wrap.on('click', '.widget-control-delete', function (event) {
+        event.preventDefault();
+
+        var _self = $(event.currentTarget);
+
+        var widget = _self.closest('li');
+
+        _self.addClass('button-loading');
+
+        $.ajax({
+          type: 'DELETE',
+          cache: false,
+          url: BWidget.routes["delete"],
+          data: {
+            widget_id: widget.data('id'),
+            position: widget.data('position'),
+            sidebar_id: _self.closest('.sidebar-item').data('id')
+          },
+          beforeSend: function beforeSend() {
+            Fast.showNotice('info', FastVariables.languages.notices_msg.processing_request);
+          },
+          success: function success(data) {
+            if (data.error) {
+              Fast.showError(data.message);
+            } else {
+              Fast.showSuccess(data.message);
+              widget.fadeOut().remove();
+            }
+
+            widget.find('.widget-control-delete').removeClass('button-loading');
+          },
+          error: function error(data) {
+            Fast.handleError(data);
+            widget.find('.widget-control-delete').removeClass('button-loading');
+          }
+        });
+      });
+      widget_wrap.on('click', '#added-widget .widget-handle', function (event) {
+        var _self = $(event.currentTarget);
+
+        _self.closest('li').find('.widget-content').slideToggle(300);
+
+        _self.find('.fa').toggleClass('fa-caret-up');
+
+        _self.find('.fa').toggleClass('fa-caret-down');
+      });
+      widget_wrap.on('click', '.widget_save', function (event) {
+        event.preventDefault();
+
+        var _self = $(event.currentTarget);
+
+        _self.addClass('button-loading');
+
+        saveWidget(_self.closest('.sidebar-item'));
+      });
+      Fast.callScroll($('.list-page-select-widget'));
+    }
+  }]);
+
+  return WidgetManagement;
+}();
+
+$(document).ready(function () {
+  new WidgetManagement().init();
+});
+
+/***/ }),
+
+/***/ 24:
+/*!**********************************************************************!*\
+  !*** multi ./platform/packages/widget/resources/assets/js/widget.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! E:\laragon\www\fast\platform\packages\widget\resources\assets\js\widget.js */"./platform/packages/widget/resources/assets/js/widget.js");
+
+
+/***/ })
+
+/******/ });

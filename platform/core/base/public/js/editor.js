@@ -1,1 +1,235 @@
-!function(e){var t={};function i(n){if(t[n])return t[n].exports;var o=t[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,i),o.l=!0,o.exports}i.m=e,i.c=t,i.d=function(e,t,n){i.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},i.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.t=function(e,t){if(1&t&&(e=i(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(i.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)i.d(n,o,function(t){return e[t]}.bind(null,o));return n},i.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return i.d(t,"a",t),t},i.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},i.p="/",i(i.s=342)}({342:function(e,t,i){e.exports=i(343)},343:function(e,t){function i(e,t){for(var i=0;i<t.length;i++){var n=t[i];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}var n=function(){function e(){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e)}var t,n,o;return t=e,(n=[{key:"initCkEditor",value:function(e,t){var i={filebrowserImageBrowseUrl:RV_MEDIA_URL.base+"?media-action=select-files&method=ckeditor&type=image",filebrowserImageUploadUrl:RV_MEDIA_URL.media_upload_from_editor+"?method=ckeditor&type=image&_token="+$('meta[name="csrf-token"]').attr("content"),filebrowserWindowWidth:"1200",filebrowserWindowHeight:"750",height:90*$("#"+e).prop("rows"),allowedContent:!0},n={};$.extend(n,i,t),CKEDITOR.replace(e,n)}},{key:"initTinyMce",value:function(e){tinymce.init({menubar:!0,selector:"#"+e,skin:"voyager",min_height:75*$("#"+e).prop("rows"),resize:"vertical",plugins:"code autolink advlist visualchars link image media table charmap hr pagebreak nonbreaking anchor insertdatetime lists textcolor wordcount imagetools  contextmenu  visualblocks",extended_valid_elements:"input[id|name|value|type|class|style|required|placeholder|autocomplete|onclick]",file_browser_callback:function(e,t,i){"image"===i&&$("#upload_file").trigger("click")},toolbar:"formatselect | bold italic strikethrough forecolor backcolor | link image table | alignleft aligncenter alignright alignjustify  | numlist bullist indent  |  visualblocks code",convert_urls:!1,image_caption:!0,image_advtab:!0,image_title:!0,entity_encoding:"raw",content_style:".mce-content-body {padding: 10px}",contextmenu:"link image inserttable | cell row column deletetable",bootstrapConfig:{imagesPath:"/uploads"}})}},{key:"initEditor",value:function(e,t,i){var n=this;if(e.length)switch(i){case"ckeditor":$.each(e,(function(e,i){n.initCkEditor($(i).prop("id"),t)}));break;case"tinymce":$.each(e,(function(e,t){n.initTinyMce($(t).prop("id"))}))}}},{key:"init",value:function(){var e=$(".editor-ckeditor"),t=$(".editor-tinymce");e.length>0&&this.initEditor(e,{},"ckeditor"),t.length>0&&this.initEditor(t,{},"tinymce");var i=this;$(document).on("click",".show-hide-editor-btn",(function(e){e.preventDefault();var t=$(e.currentTarget),n=$("#"+t.data("result"));n.hasClass("editor-ckeditor")?CKEDITOR.instances[t.data("result")]&&void 0!==CKEDITOR.instances[t.data("result")]?(CKEDITOR.instances[t.data("result")].updateElement(),CKEDITOR.instances[t.data("result")].destroy(),$(".editor-action-item").not(".action-show-hide-editor").hide()):(i.initCkEditor(t.data("result"),{},"ckeditor"),$(".editor-action-item").not(".action-show-hide-editor").show()):n.hasClass("editor-tinymce")&&tinymce.execCommand("mceToggleEditor",!1,t.data("result"))}))}}])&&i(t.prototype,n),o&&i(t,o),e}();$(document).ready((function(){(new n).init()}))}});
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./platform/core/base/resources/assets/js/editor.js":
+/*!**********************************************************!*\
+  !*** ./platform/core/base/resources/assets/js/editor.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var EditorManagement =
+/*#__PURE__*/
+function () {
+  function EditorManagement() {
+    _classCallCheck(this, EditorManagement);
+  }
+
+  _createClass(EditorManagement, [{
+    key: "initCkEditor",
+    value: function initCkEditor(element, extraConfig) {
+      var config = {
+        filebrowserImageBrowseUrl: RV_MEDIA_URL.base + '?media-action=select-files&method=ckeditor&type=image',
+        filebrowserImageUploadUrl: RV_MEDIA_URL.media_upload_from_editor + '?method=ckeditor&type=image&_token=' + $('meta[name="csrf-token"]').attr('content'),
+        filebrowserWindowWidth: '1200',
+        filebrowserWindowHeight: '750',
+        height: $('#' + element).prop('rows') * 90,
+        allowedContent: true
+      };
+      var mergeConfig = {};
+      $.extend(mergeConfig, config, extraConfig);
+      CKEDITOR.replace(element, mergeConfig);
+    }
+  }, {
+    key: "initTinyMce",
+    value: function initTinyMce(element) {
+      tinymce.init({
+        menubar: true,
+        selector: '#' + element,
+        skin: 'voyager',
+        min_height: $('#' + element).prop('rows') * 75,
+        resize: 'vertical',
+        plugins: 'code autolink advlist visualchars link image media table charmap hr pagebreak nonbreaking anchor insertdatetime lists textcolor wordcount imagetools  contextmenu  visualblocks',
+        extended_valid_elements: 'input[id|name|value|type|class|style|required|placeholder|autocomplete|onclick]',
+        file_browser_callback: function file_browser_callback(field_name, url, type) {
+          if (type === 'image') {
+            $('#upload_file').trigger('click');
+          }
+        },
+        toolbar: 'formatselect | bold italic strikethrough forecolor backcolor | link image table | alignleft aligncenter alignright alignjustify  | numlist bullist indent  |  visualblocks code',
+        convert_urls: false,
+        image_caption: true,
+        image_advtab: true,
+        image_title: true,
+        entity_encoding: 'raw',
+        content_style: '.mce-content-body {padding: 10px}',
+        contextmenu: 'link image inserttable | cell row column deletetable',
+        bootstrapConfig: {
+          imagesPath: '/uploads'
+        }
+      });
+    }
+  }, {
+    key: "initEditor",
+    value: function initEditor(element, extraConfig, type) {
+      var current = this;
+
+      if (element.length) {
+        switch (type) {
+          case 'ckeditor':
+            $.each(element, function (index, item) {
+              current.initCkEditor($(item).prop('id'), extraConfig);
+            });
+            break;
+
+          case 'tinymce':
+            $.each(element, function (index, item) {
+              current.initTinyMce($(item).prop('id'));
+            });
+            break;
+        }
+      }
+    }
+  }, {
+    key: "init",
+    value: function init() {
+      var $ckEditor = $('.editor-ckeditor');
+      var $tinyMce = $('.editor-tinymce');
+
+      if ($ckEditor.length > 0) {
+        this.initEditor($ckEditor, {}, 'ckeditor');
+      }
+
+      if ($tinyMce.length > 0) {
+        this.initEditor($tinyMce, {}, 'tinymce');
+      }
+
+      var current = this;
+      $(document).on('click', '.show-hide-editor-btn', function (event) {
+        event.preventDefault();
+
+        var _self = $(event.currentTarget);
+
+        var $result = $('#' + _self.data('result'));
+
+        if ($result.hasClass('editor-ckeditor')) {
+          if (CKEDITOR.instances[_self.data('result')] && typeof CKEDITOR.instances[_self.data('result')] !== 'undefined') {
+            CKEDITOR.instances[_self.data('result')].updateElement();
+
+            CKEDITOR.instances[_self.data('result')].destroy();
+
+            $('.editor-action-item').not('.action-show-hide-editor').hide();
+          } else {
+            current.initCkEditor(_self.data('result'), {}, 'ckeditor');
+            $('.editor-action-item').not('.action-show-hide-editor').show();
+          }
+        } else if ($result.hasClass('editor-tinymce')) {
+          tinymce.execCommand('mceToggleEditor', false, _self.data('result'));
+        }
+      });
+    }
+  }]);
+
+  return EditorManagement;
+}();
+
+$(document).ready(function () {
+  new EditorManagement().init();
+});
+
+/***/ }),
+
+/***/ 2:
+/*!****************************************************************!*\
+  !*** multi ./platform/core/base/resources/assets/js/editor.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! E:\laragon\www\fast\platform\core\base\resources\assets\js\editor.js */"./platform/core/base/resources/assets/js/editor.js");
+
+
+/***/ })
+
+/******/ });
