@@ -17,9 +17,9 @@ class CategoryRepository extends RepositoriesAbstract implements CategoryInterfa
     {
         $data = $this->model
             ->with('slugable')
-            ->where('categories.status', '=', BaseStatusEnum::PUBLISHED)
-            ->select('categories.*')
-            ->orderBy('categories.created_at', 'desc');
+            ->where('software_categories.status', '=', BaseStatusEnum::PUBLISHED)
+            ->select('software_categories.*')
+            ->orderBy('software_categories.created_at', 'desc');
 
         return $this->applyBeforeExecuteQuery($data)->get();
     }
@@ -30,18 +30,18 @@ class CategoryRepository extends RepositoriesAbstract implements CategoryInterfa
     public function getFeaturedCategories($limit)
     {
         $data = $this->model
-            ->with('slugable')
+            ->with('slugable','softwares')
             ->where([
-                'categories.status'      => BaseStatusEnum::PUBLISHED,
-                'categories.is_featured' => 1,
+                'software_categories.status'      => BaseStatusEnum::PUBLISHED,
+                'software_categories.is_featured' => 1,
             ])
             ->select([
-                'categories.id',
-                'categories.name',
-                'categories.icon',
+                'software_categories.id',
+                'software_categories.name',
+                'software_categories.icon',
             ])
-            ->orderBy('categories.order', 'asc')
-            ->select('categories.*')
+            ->orderBy('software_categories.order', 'asc')
+            ->select('software_categories.*')
             ->limit($limit);
 
         return $this->applyBeforeExecuteQuery($data)->get();
@@ -52,12 +52,12 @@ class CategoryRepository extends RepositoriesAbstract implements CategoryInterfa
      */
     public function getAllCategories(array $condition = [])
     {
-        $data = $this->model->with('slugable')->select('categories.*');
+        $data = $this->model->with('slugable','softwares')->select('software_categories.*');
         if (!empty($condition)) {
             $data = $data->where($condition);
         }
 
-        $data = $data->orderBy('categories.order', 'DESC');
+        $data = $data->orderBy('software_categories.order', 'DESC');
 
         return $this->applyBeforeExecuteQuery($data)->get();
     }
@@ -68,8 +68,8 @@ class CategoryRepository extends RepositoriesAbstract implements CategoryInterfa
     public function getCategoryById($id)
     {
         $data = $this->model->with('slugable')->where([
-            'categories.id'     => $id,
-            'categories.status' => BaseStatusEnum::PUBLISHED,
+            'software_categories.id'     => $id,
+            'software_categories.status' => BaseStatusEnum::PUBLISHED,
         ]);
 
         return $this->applyBeforeExecuteQuery($data, true)->first();
@@ -96,7 +96,7 @@ class CategoryRepository extends RepositoriesAbstract implements CategoryInterfa
         if ($id instanceof Eloquent) {
             $model = $id;
         } else {
-            $model = $this->getFirstBy(['categories.id' => $id]);
+            $model = $this->getFirstBy(['software_categories.id' => $id]);
         }
         if (!$model) {
             return null;
@@ -104,7 +104,7 @@ class CategoryRepository extends RepositoriesAbstract implements CategoryInterfa
 
         $result = [];
 
-        $children = $model->children()->select('categories.id')->get();
+        $children = $model->children()->select('software_categories.id')->get();
 
         foreach ($children as $child) {
             $result[] = $child->id;

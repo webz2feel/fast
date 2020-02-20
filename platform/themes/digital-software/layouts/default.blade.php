@@ -9,12 +9,12 @@
         <link rel="canonical" href="{{ url('/') }}">
         <meta http-equiv="content-language" content="en">
 
-        <title>{{ SeoHelper::getTitle() }}</title>
+{{--        <title>{{ SeoHelper::getTitle() }}</title>--}}
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap">
         {!! Theme::header() !!}
     </head>
     <body>
-        <div class="wrapper">
+        <div class="wrapper" id="page">
             {!! Theme::partial('header') !!}
             <main class="main">
                 {!! Theme::content() !!}

@@ -1,7 +1,7 @@
 <?php
 
+use Fast\Software\Repositories\Interfaces\CategoryInterface;
 use Fast\Theme\Theme;
-
 return [
 
     /*
@@ -49,6 +49,7 @@ return [
             // $theme->asset()->usePath()->add('core', 'core.js');
             // $theme->asset()->usePath()->add('jquery', 'vendor/jquery/jquery.min.js');
             // $theme->asset()->usePath()->add('jquery-ui', 'vendor/jqueryui/jquery-ui.min.js', ['jquery']);
+            $theme->asset()->usePath()->add('fontawesome-css', 'libraries/fontawesome/css/font-awesome.min.css');
             $theme->asset()->usePath()->add('bootstrap-css', 'libraries/bootstrap/bootstrap.min.v4.css');
             $theme->asset()->usePath()->add('style-css', 'css/style.css');
             // Partial composer.
@@ -57,7 +58,16 @@ return [
             //     $view->with('auth', \Auth::user());
             // });
 
-
+            $theme->composer(['index','software-categories','left-side','software-detail'], function($view) {
+                $categories = collect([]);
+                $categories = app(CategoryInterface::class)->advancedGet([
+                     'condition' => [
+                         'software_categories.status'      => 'published',
+                         'software_categories.parent_id'   => 0,
+                     ],
+                 ]);
+                $view->with('categories', compact('categories'));
+            });
             if (function_exists('shortcode')) {
                 $theme->composer(['index', 'page', 'post'], function(\Fast\Shortcode\View\View $view) {
                     $view->withShortcodes();

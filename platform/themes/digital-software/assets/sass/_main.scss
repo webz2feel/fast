@@ -1,86 +1,175 @@
-body{
-    font-family: 'Roboto', sans-serif;
-    font-weight:normal;
-    color: #000;
-    background: #f1f1f1;
-    line-height: 1.3;
+@import "global";
+@import "elementor1";
+@import "plugins";
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1240px !important;
+    }
 }
-.heading-bar{
-    border-top: 3px solid #33a137;
-    padding: 5px;
-    background: #fff;
-    margin-bottom: 10px;
+
+.sf-menu a {
+    font-size: 12px !important;
 }
-.heading-bar h4{
-    margin-bottom: 0;
+
+/* ===========
+GLOBALS
+===========*/
+body {
+    font-size: 14px;
+    line-height: 30px;
+    color: #666666;
+    width: 100%;
+    overflow-x: hidden;
+    background: #f3f3f3;
 }
-.logo-bar img{
-    max-width:150px;
+
+a {
+    color: #555555;
 }
-.header .navbar{
-    background: #33a137;
-    text-align: center;
-    padding: 0;
-}
-.header .navbar ul,.logo-bar,.main,.footer-inner{
-    max-width: 1300px;
+
+#page {
     margin: 0 auto;
+    border-top: 0px;
+    border-bottom: 0px;
 }
-.header .navbar ul li{
-    display: inline-block;
+
+h1, .h1, h2, .h2, h3, .h3, h5, .h5, h6, .h6 {
+    font-weight: 300;
 }
-.header .navbar ul li a{
-    display: block;
-    padding: 1em;
+
+h1, .h1, h2, .h2, h3, .h3, .h4, h4, h5, .h5, h6, .h6, .ppt-menu > ul > li > a, .btn, .sf-menu a {
+}
+
+.ppt-menu > ul > li > a {
+    letter-spacing: 1.5px;
+}
+
+/* ===========
+COLORS
+=========== */
+.bg-primary {
+    background: #0e6b99 !important;
+}
+
+.text-primary {
+    color: #0e9be3 !important;
+}
+
+.btn-primary, .btn-primary.disabled, .btn-primary:disabled {
     color: #fff;
-    text-decoration: none;
+    background-color: #0e9be3 !important;
+    border-color: #0e9be3;
 }
-.header .navbar ul li a:hover{
-    background: darkgreen;
-}
-.main{
-    padding-top: 3em;
-}
-.footer{
-    margin-top: 2em;
-    background: #333;
+
+.btn-secondary {
     color: #fff;
+    background-color: #f0ad4e !important;
+    border-color: #f0ad4e;
 }
-.copyright{
-    border-top: 1px solid #eee;
+
+.bg-secondary {
+    background: #0e9be3 !important;
+    border-color: #2e4354;
+}
+
+.text-secondary {
+    color: #2e4354 !important;
+}
+
+.user-header, .cat-item, .noresults {
+    background: #fff !important
+}
+
+/* ===========
+MAIN HEADER
+===========*/
+header .form-group {
+    padding: 5px;
+    background: #00000026;
+    border: 1px solid #27739a;
+}
+
+.header-1 .nav-link {
+    background: #f3f3f3;
+    text-shadow: 1px 1px 1px #fff;
+}
+
+.bg-extra nav {
+    max-width: 1240px !important;
+    margin: auto;
+}
+
+.bg-extra {
+    border-bottom: 5px solid #f0ad4e;
+}
+
+.header-1 .wlt_shortcode_dcats li i {
+    margin-top: 9px;
+}
+
+.ppt-menu > ul > li > a {
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    text-shadow: 1px 1px 0px #36575f;
+    font-size: 12px;
+}
+
+.ppt-menu > ul {
+}
+
+.ppt-menu > ul > li {
+    border-left: 1px solid #0000004a;
+    border-right: 1px solid #ffffff45;
     text-align: center;
-    padding: 1em;
 }
-.sidebar-widget{
-    margin-bottom: 15px;
+
+.ppt-menu > ul > li:first-child {
+    border-left: 1px solid #0000004a !important;
+    border-right: 1px solid #ffffff45 !important;
+    background: #f0ad4e !important;
+}
+
+.ppt-menu > ul > li:last-child {
+    border-right: 1px solid #0000004a !important;
+}
+
+/* ===========
+MMAIN
+===========*/
+.resultstxt {
+    border-bottom: 0;
+    margin-right: -10px;
+}
+
+main, .main {
+    margin: auto;
+    max-width: 1200px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.sf-menu a {
+    padding: 5px 10px;
+}
+
+.title-bar {
+    background: #0e9be3;
+    color: #ffffff;
+    padding: 15px 10px;
+    font-size: 14px;
+    border-bottom: 3px solid #f0ad4e;
+    text-transform: uppercase;
+}
+
+.title-bar i {
+    margin-right: 10px;
+}
+
+article {
+    border: 1px solid #ddd;
+}
+.software-item{
     background: #fff;
-}
-.widget-title h5{
-    margin-bottom: 0;
-}
-.widget-title{
-    font-size: 18px;
-    padding: 10px 15px;
-    border-bottom: 1px solid #33a137;
-    background: #33a137;
-    color: #fff;
-    margin-bottom: 2px;
-}
-.widget-body ul{
-    list-style: none;
-    padding: 0;
-}
-.widget-body ul li a {
-    text-decoration: none;
-    padding: 10px 15px;
-    display:block;
-    border-bottom: 1px solid #33a137;
-    color: #000;
-}
-.widget-body ul li:last-child a{
-    border-bottom: none;
-}
-.widget-body ul li a:hover{
-    background: #33a137;
-    color: #fff;
 }

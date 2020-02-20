@@ -116,25 +116,25 @@ if (!function_exists('get_recent_softwares')) {
 }
 
 
-if (!function_exists('get_featured_categories')) {
+if (!function_exists('get_featured_software_categories')) {
     /**
      * @param $limit
      * @return mixed
      *
      */
-    function get_featured_categories($limit)
+    function get_featured_software_categories($limit)
     {
         return app(CategoryInterface::class)->getFeaturedCategories($limit);
     }
 }
 
-if (!function_exists('get_all_categories')) {
+if (!function_exists('get_all_software_categories')) {
     /**
      * @param array $condition
      * @return mixed
      *
      */
-    function get_all_categories(array $condition = [])
+    function get_all_software_categories(array $condition = [])
     {
         return app(CategoryInterface::class)->getAllCategories($condition);
     }

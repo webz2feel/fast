@@ -6,6 +6,8 @@ Route::group(['namespace' => 'Theme\DigitalSoftware\Http\Controllers', 'middlewa
     Route::group(apply_filters(BASE_FILTER_GROUP_PUBLIC_ROUTE, []), function () {
 
         Route::get('/', 'DigitalSoftwareController@getIndex')->name('public.index');
+        Route::get('/listing/{slug}', 'DigitalSoftwareController@softwareDetail')->name('public.software-detail');
+        Route::get('/listing-categories/{slug}', 'SoftwareCategoryController@getSoftware')->name('public.list-cat');
 
         Route::get('sitemap.xml', [
             'as'   => 'public.sitemap',

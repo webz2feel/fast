@@ -1,59 +1,61 @@
 <div class="row">
     {!! Theme::partial('left-side',['categories' => $categories['categories']]) !!}
     <div class="col-12 col-md-8 col-lg-7 px-0">
-        <h4 class="mb-4 title-bar"> <i class="fa fa-folder-open-o" aria-hidden="true"></i> Featured Categories</h4>
-        <div class="cat-item-wrapper d-none d-sm-none d-md-block">
-            @if($featuredCat)
-                <div class="row">
-                    @foreach($featuredCat as $featured)
-                        <div class="col-md-4">
-                        <div class="cat-item1 bg-light">
-                            <a href="{{route('public.list-cat', $featured->slug)}}">
-                                <div class="icon bg-primary">
-                                    <img src="https://www.premiumpress.com/_demoimages/softwaretheme/c1.jpg" class="img-fluid">
-                                </div>
-                                <div class="content bg-secondary">
-                                    <h6 class="text-white font-weight-bold">{{$featured->name}}</h6>
-                                    <span class="bg-danger text-white">{{$featured->softwares->count()}}</span>
-                                </div>
-                            </a>
+        <div class="border">
+            <div class="row">
+                <div class="col-md-12  px-lg-4">
+                    <div class="row">
+                        <div class="col-md-6 text-center product-img-box mt-4">
+                            <img src="{{get_object_image($software->image)}}"
+                                 class="img-fluid" alt=""></div>
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush"
+                                style="font-size:14px; background:none;">
+                                <li class="list-group-item">
+                                    <h1 class="h4 mb-4 mt-3">{{$software->name}}</h1>
+                                    <p><span class="wlt_shortcode_excerpt"></span></p>
+                                </li>
+                                <li class="list-group-item"><i class="fa fa-download"></i> 23
+                                    Downloads
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fa fa-bullhorn" aria-hidden="true"></i> Listed under
+                                    <span class="wlt_shortcode_category "><a
+                                            href="http://so9.wlthemes.com/listing-category/desktop/">
+                                            @foreach($software->categories as $cat)
+                                                {{rtrim($cat->name.',',',')}}
+                                            @endforeach</a></span>
+                                </li>
+                                <li class="list-group-item"><i class="fa fa-bar-chart-o"></i> Viewed
+                                    {{$software->views}} times
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                     @endforeach
-                </div>
-            @endif
-        </div>
-        <div class="wlt_sellspace home1"><a href="http://so9.wlthemes.com/advertising/?selladd=1&amp;ad=home1">
-                <div class="sellspace_banner banner_700_90 text-center hidden-xs hidden-sm" style="width:700px; height:90px">
-                    <div class="title">Advertise Here</div> <div class="pricing">view pricing</div>
-                </div>
-            </a></div>
-        <h4 class="mb-4 title-bar"> <i class="fa fa-folder-open-o" aria-hidden="true"></i> All Categories</h4>
-        @if($allCategories)
-        <div class="cat-item-wrapper">
-            <div class="row">
-                @foreach($allCategories as $cat)
-                    <div class="col-md-4 col-12">
-                    <div class="cat-item2 bg-light">
-                        <a href="{{route('public.list-cat', $cat->slug)}}">
-                            <div class="content">
-                                <h6 class="text-dark font-weight-bold">
-                                    <span class="float-left">{{$cat->name}}</span>
-                                    <span class="float-right countb bg-primary text-light px-2">{{$cat->softwares->count()}}</span>
-                                </h6>
+                    <div class="bg-light border my-4 p-3">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="btn-group btn-block">
+                                    <a class="btn btn-lg btn-primary disabled"><i
+                                            class="fa fa-download text-white"
+                                            style="width:16px; height:20px"></i></a>
+                                    <a class="btn btn-lg   btn-block btn-primary "
+                                       href="{{$software->download_link_32}}" id="single_addcart_btn"> Download</a>
+                                </div>
                             </div>
-                        </a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="tab-content pb-5">
+                        <div class="tab-pane fade active show" id="desc"
+                             aria-labelledby="home-tab">
+                            <div class="bg-light py-5 text-muted mt-2 typography p-3">
+                                <h6 class="font-weight-bold text-uppercase mb-4">Description</h6>
+                                {!! $software->content  !!}
+                            </div>
+                        </div>
                     </div>
                 </div>
-                @endforeach
-            </div>
-        </div>
-        @endif
-        <a href="http://so9.wlthemes.com/?s=" class="float-right mr-3 d-none d-sm-block btn-primary mt-2">View All <i class="fa fa-chevron-right ml-3" aria-hidden="true"></i></a>
-        <h4 class="mb-4 title-bar"><i class="fa fa-check-square-o" aria-hidden="true"></i> Recently Added</h4>
-        <div class="row">
-            <div class="col-12">
-                {!! Theme::partial('software-list',['softwares' => $softwares]) !!}
             </div>
         </div>
     </div>
