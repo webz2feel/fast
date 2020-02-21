@@ -1,0 +1,9 @@
+{
+    "name": "Request Log",
+    "namespace": "Fast\\RequestLog\\",
+    "provider": "Fast\\RequestLog\\Providers\\RequestLogServiceProvider",
+    "author": "Imran Ali",
+    "url": "http://imran.iilogics.com",
+    "version": "3.0",
+    "description": "Log error requests"
+}

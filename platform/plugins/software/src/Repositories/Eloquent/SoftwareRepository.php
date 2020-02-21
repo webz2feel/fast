@@ -47,7 +47,7 @@ class SoftwareRepository extends RepositoriesAbstract implements SoftwareInterfa
     /**
      * {@inheritdoc}
      */
-    public function getRelated($id, $limit = 3)
+    public function getRelatedSoftware($id, $limit = 3)
     {
         $data = $this->model
             ->where('softwares.status', '=', BaseStatusEnum::PUBLISHED)
@@ -152,6 +152,38 @@ class SoftwareRepository extends RepositoriesAbstract implements SoftwareInterfa
             ->with('slugable')
             ->select('softwares.*')
             ->orderBy('softwares.created_at', 'desc');
+
+        return $this->applyBeforeExecuteQuery($data)->get();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getTopDownloadsSoftware($limit = 7)
+    {
+        $softwares = $this->model->where(['softwares.status' => BaseStatusEnum::PUBLISHED]);
+
+        $data = $softwares->limit($limit)
+            ->with('slugable')
+            ->select('softwares.*')
+            ->orderBy('softwares.views', 'desc');
+
+        return $this->applyBeforeExecuteQuery($data)->get();
+    }
+
+    /**
+     * @param  int  $limit
+     *
+     * @return mixed
+     */
+    public function getLatestDownloadsSoftware($limit = 5)
+    {
+        $softwares = $this->model->where(['softwares.status' => BaseStatusEnum::PUBLISHED]);
+
+        $data = $softwares->limit($limit)
+            ->with('slugable')
+            ->select('softwares.*')
+            ->orderBy('softwares.updated_at', 'desc');
 
         return $this->applyBeforeExecuteQuery($data)->get();
     }

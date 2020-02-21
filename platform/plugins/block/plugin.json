@@ -1,0 +1,9 @@
+{
+    "name": "Block",
+    "namespace": "Fast\\Block\\",
+    "provider": "Fast\\Block\\Providers\\BlockServiceProvider",
+    "author": "Imran Ali",
+    "url": "http://imran.iilogics.com",
+    "version": "2.6",
+    "description": "Manage static block (HTML, Text) on your theme"
+}

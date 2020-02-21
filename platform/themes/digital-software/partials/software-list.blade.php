@@ -24,12 +24,12 @@
                 <div class="row">
                     <div class="col-md-12 col-sm-6 col-12">
                         <ul class="list-inline mt-1 mb-2 flex-list">
-                            <li class="list-inline-item"><i class="fa fa-download"></i> 36
-                                Downloads
-                            </li>
-                            <li class="list-inline-item">
-                                <i class="fa fa-comment" aria-hidden="true"></i> 0 Comments
-                            </li>
+{{--                            <li class="list-inline-item"><i class="fa fa-download"></i> {{$software->downloads}}--}}
+{{--                                Downloads--}}
+{{--                            </li>--}}
+{{--                            <li class="list-inline-item">--}}
+{{--                                <i class="fa fa-comment" aria-hidden="true"></i> 0 Comments--}}
+{{--                            </li>--}}
                             <li class="list-inline-item last"><i
                                     class="fa fa-bar-chart-o"></i> Viewed {{$software->views}} times
                             </li>

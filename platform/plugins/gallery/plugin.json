@@ -1,0 +1,9 @@
+{
+    "name": "Gallery",
+    "namespace": "Fast\\Gallery\\",
+    "provider": "Fast\\Gallery\\Providers\\GalleryServiceProvider",
+    "author": "Imran Ali",
+    "url": "http://imran.iilogics.com",
+    "version": "2.7",
+    "description": "Create or easy to add gallery images to posts, pages..."
+}

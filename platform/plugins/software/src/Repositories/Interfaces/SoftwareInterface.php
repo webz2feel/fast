@@ -51,7 +51,7 @@ interface SoftwareInterface extends RepositoryInterface
      * @param int $limit
      * @return mixed
      */
-    public function getRelated($id, $limit = 3);
+    public function getRelatedSoftware($id, $limit = 3);
 
     /**
      * @param int $limit
@@ -59,6 +59,20 @@ interface SoftwareInterface extends RepositoryInterface
      * @return mixed
      */
     public function getRecentSoftwares($limit = 5, $categoryId = 0);
+
+    /**
+     * @param  int  $limit
+     *
+     * @return mixed
+     */
+    public function getTopDownloadsSoftware($limit = 7);
+
+    /**
+     * @param  int  $limit
+     *
+     * @return mixed
+     */
+    public function getLatestDownloadsSoftware($limit = 5);
 
     /**
      * @param string $query

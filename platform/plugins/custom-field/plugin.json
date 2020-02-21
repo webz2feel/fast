@@ -1,0 +1,9 @@
+{
+    "name": "Custom Fields",
+    "namespace": "Fast\\CustomField\\",
+    "provider": "Fast\\CustomField\\Providers\\CustomFieldServiceProvider",
+    "author": "Imran Ali",
+    "url": "http://imran.iilogics.com",
+    "version": "2.7",
+    "description": "Custom Fields"
+}

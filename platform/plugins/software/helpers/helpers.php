@@ -46,7 +46,7 @@ if (!function_exists('get_related_softwares')) {
      */
     function get_related_softwares($current_slug, $limit)
     {
-        return app(SoftwareInterface::class)->getRelated($current_slug, $limit);
+        return app(SoftwareInterface::class)->getRelatedSoftware($current_slug, $limit);
     }
 }
 
@@ -295,5 +295,28 @@ if (!function_exists('get_post_formats')) {
     function get_post_formats($convert_to_list = false)
     {
         return SoftwareFormat::getSoftwareFormats($convert_to_list);
+    }
+}
+if (!function_exists('get_top_downloads_software')) {
+    /**
+     * @param $limit
+     * @return mixed
+     *
+     */
+    function get_top_downloads_software($limit)
+    {
+        return app(SoftwareInterface::class)->getTopDownloadsSoftware($limit);
+    }
+}
+
+if (!function_exists('get_latest_downloads_software')) {
+    /**
+     * @param $limit
+     * @return mixed
+     *
+     */
+    function get_latest_downloads_software($limit)
+    {
+        return app(SoftwareInterface::class)->getLatestDownloadsSoftware($limit);
     }
 }

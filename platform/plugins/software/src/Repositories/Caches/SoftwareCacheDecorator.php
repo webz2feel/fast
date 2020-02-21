@@ -52,7 +52,7 @@ class SoftwareCacheDecorator extends CacheAbstractDecorator implements SoftwareI
     /**
      * {@inheritdoc}
      */
-    public function getRelated($slug, $limit = 3)
+    public function getRelatedSoftware($slug, $limit = 3)
     {
         return $this->getDataIfExistCache(__FUNCTION__, func_get_args());
     }
@@ -61,6 +61,26 @@ class SoftwareCacheDecorator extends CacheAbstractDecorator implements SoftwareI
      * {@inheritdoc}
      */
     public function getRecentSoftwares($limit = 5, $categoryId = 0)
+    {
+        return $this->getDataIfExistCache(__FUNCTION__, func_get_args());
+    }
+
+    /**
+     * @param  int  $limit
+     *
+     * @return mixed
+     */
+    public function getTopDownloadsSoftware($limit = 7)
+    {
+        return $this->getDataIfExistCache(__FUNCTION__, func_get_args());
+    }
+
+    /**
+     * @param  int  $limit
+     *
+     * @return mixed
+     */
+    public function getLatestDownloadsSoftware($limit = 5)
     {
         return $this->getDataIfExistCache(__FUNCTION__, func_get_args());
     }

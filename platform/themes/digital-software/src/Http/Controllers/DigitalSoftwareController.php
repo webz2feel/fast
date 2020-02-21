@@ -60,8 +60,10 @@ class DigitalSoftwareController extends PublicController
         Theme::breadcrumb()
             ->add(__('Home'), url('/'))
             ->add($software->name, route('public.software-detail', $slug));
+        $related_softwares = get_related_softwares($software->id, 7);
         do_action(BASE_ACTION_PUBLIC_RENDER_SINGLE, SOFTWARE_MODULE_SCREEN_NAME, $software);
-        return Theme::scope('software-detail', ['software' => $software])->render();
+
+        return Theme::scope('software-detail', ['software' => $software, 'softwares' => $related_softwares])->render();
     }
 
     /**

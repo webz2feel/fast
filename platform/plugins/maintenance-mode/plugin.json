@@ -1,0 +1,9 @@
+{
+    "name": "MaintenanceMode",
+    "namespace": "Fast\\MaintenanceMode\\",
+    "provider": "Fast\\MaintenanceMode\\Providers\\MaintenanceModeServiceProvider",
+    "author": "Imran Ali",
+    "url": "http://imran.iilogics.com",
+    "version": "1.0",
+    "description": "The description for plugin maintenance_mode"
+}

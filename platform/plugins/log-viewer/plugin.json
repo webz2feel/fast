@@ -1,0 +1,9 @@
+{
+    "name": "Log Viewer",
+    "namespace": "Fast\\LogViewer\\",
+    "provider": "Fast\\LogViewer\\Providers\\LogViewerServiceProvider",
+    "author": "Imran Ali",
+    "url": "http://imran.iilogics.com",
+    "version": "2.6",
+    "description": "Log Viewer"
+}

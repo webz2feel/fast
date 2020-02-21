@@ -1,0 +1,9 @@
+{
+    "name": "Note",
+    "namespace": "Fast\\Note\\",
+    "provider": "Fast\\Note\\Providers\\NoteServiceProvider",
+    "author": "Imran Ali",
+    "url": "http://imran.iilogics.com",
+    "version": "2.6",
+    "description": "Allow to add note when editing page, post..."
+}

@@ -67,6 +67,10 @@ return [
                      ],
                  ]);
                 $view->with('categories', compact('categories'));
+                $topDownloads = get_top_downloads_software(7);
+                $latestDownloads = get_latest_downloads_software(5);
+                $view->with('topDownloads', compact('topDownloads'));
+                $view->with('latestDownloads', compact('latestDownloads'));
             });
             if (function_exists('shortcode')) {
                 $theme->composer(['index', 'page', 'post'], function(\Fast\Shortcode\View\View $view) {

@@ -1,0 +1,9 @@
+{
+  "name": "Member",
+  "namespace": "Fast\\Member\\",
+  "provider": "Fast\\Member\\Providers\\MemberServiceProvider",
+  "author": "Imran Ali",
+  "url": "http://imran.iilogics.com",
+  "version": "2.7",
+  "description": "Manage member, user register/login"
+}
