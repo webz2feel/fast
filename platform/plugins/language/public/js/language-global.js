@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 35);
+/******/ 	return __webpack_require__(__webpack_require__.s = 40);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -175,7 +175,7 @@ $(document).ready(function () {
 
 /***/ }),
 
-/***/ 35:
+/***/ 40:
 /*!********************************************************************************!*\
   !*** multi ./platform/plugins/language/resources/assets/js/language-global.js ***!
   \********************************************************************************/

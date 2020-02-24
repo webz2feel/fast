@@ -1,7 +1,7 @@
 <ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
     @foreach ($crumbs as $i => $crumb)
         @if ($i != (count($crumbs) - 1))
-        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
             <meta itemprop="position" content="{{ $i + 1}}" />
             <a href="{{ $crumb['url'] }}" itemprop="item" title="{{ $crumb['label'] }}">
                 {!! $crumb['label'] !!}
@@ -9,7 +9,7 @@
             </a>
         </li>
         @else
-        <li class="active">{!! $crumb['label'] !!}</li>
+        <li class="breadcrumb-item active">{!! $crumb['label'] !!}</li>
         @endif
     @endforeach
 </ul>

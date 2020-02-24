@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 44);
+/******/ 	return __webpack_require__(__webpack_require__.s = 52);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -105,7 +105,7 @@ $(document).ready(function () {
 
 /***/ }),
 
-/***/ 44:
+/***/ 52:
 /*!***************************************************************************!*\
   !*** multi ./platform/plugins/vendor/resources/assets/js/vendor-admin.js ***!
   \***************************************************************************/

@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 41);
+/******/ 	return __webpack_require__(__webpack_require__.s = 49);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -141,7 +141,7 @@ $(document).ready(function () {
 
 /***/ }),
 
-/***/ 41:
+/***/ 49:
 /*!*********************************************************************************!*\
   !*** multi ./platform/plugins/social-login/resources/assets/js/social-login.js ***!
   \*********************************************************************************/

@@ -39,4 +39,8 @@
             </div>
         </div>
     @endforeach
+@else
+    <div>
+        <p>{{ __('There is no data to display!') }}</p>
+    </div>
 @endif

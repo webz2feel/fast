@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 39);
+/******/ 	return __webpack_require__(__webpack_require__.s = 46);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -161,7 +161,7 @@ $(document).ready(function () {
 
 /***/ }),
 
-/***/ 39:
+/***/ 46:
 /*!*******************************************************************************!*\
   !*** multi ./platform/plugins/real-estate/resources/assets/js/real-estate.js ***!
   \*******************************************************************************/

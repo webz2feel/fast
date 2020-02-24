@@ -1,7 +1,7 @@
 let mix = require('laravel-mix');
 
 const publicPath = 'public/vendor/core/plugins/member';
-const resourcePath = './plugins/member';
+const resourcePath = './platform/plugins/member';
 
 mix
     .js(resourcePath + '/resources/assets/js/member-admin.js', publicPath + '/js')

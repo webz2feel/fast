@@ -76,7 +76,7 @@
                     <div class="pricing">view pricing</div>
                 </div>
             </a></div>
-        <div class="wlt_sellspace sidebar270c"><a
+{{--        <div class="wlt_sellspace sidebar270c"><a
                 href="http://so9.wlthemes.com/advertising/?selladd=1&amp;ad=sidebar270c">
                 <div class="sellspace_banner banner_270_200 text-center hidden-xs hidden-sm"
                      style="width:270px; height:200px">
@@ -143,7 +143,7 @@
 
                 </ul>
             </div>
-        </div>
+        </div>--}}
 
     </aside>
 </div>

@@ -1,7 +1,7 @@
 let mix = require('laravel-mix');
 
 const publicPath = 'public/vendor/core/plugins/custom-field';
-const resourcePath = './plugins/custom-field';
+const resourcePath = './platform/plugins/custom-field';
 
 mix
     .sass(resourcePath + '/resources/assets/sass/edit-field-group.scss', publicPath + '/css')

@@ -1,6 +1,6 @@
 let mix = require('laravel-mix');
 
-const publicPath = 'public/vendor/core/plugins/blog';
+const publicPath = 'public/vendor/core/plugins/software';
 const resourcePath = './platform/plugins/software';
 
 mix

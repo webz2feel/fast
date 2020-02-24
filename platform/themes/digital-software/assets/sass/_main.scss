@@ -173,3 +173,21 @@ article {
 .software-item{
     background: #fff;
 }
+.breadcrumb {
+    position: relative;
+    z-index: 10;
+    background-color: transparent;
+}
+
+.breadcrumb li {
+    color: #e4e4e4;
+    font-size: 13px;
+}
+
+.breadcrumb li.active {
+    color: #ff2b4a;
+}
+
+.breadcrumb a:hover {
+    color: #ff2b4a;
+}

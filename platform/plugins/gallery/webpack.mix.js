@@ -1,7 +1,7 @@
 let mix = require('laravel-mix');
 
 const publicPath = 'public/vendor/core/plugins/gallery';
-const resourcePath = './plugins/gallery';
+const resourcePath = './platform/plugins/gallery';
 
 mix
     .sass(resourcePath + '/resources/assets/sass/gallery.scss', publicPath + '/css')

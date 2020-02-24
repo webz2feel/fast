@@ -16,19 +16,14 @@
                         </div>
                     </div>
                     <div class="col-12 col-lg-5">
-                        <form action="http://so9.wlthemes.com/" method="get" name=""
-                              id="mainsearchform">
-                            <input type="hidden" name="catid" value="" id="searchform1_catid">
+                        <form class="navbar-form navbar-right" id="top-form" role="search"
+                              accept-charset="UTF-8"
+                              action="{{ route('public.search') }}"
+                              method="GET">
                             <div class="form-group mb-1">
                                 <div class="input-group">
-                                    <div class="input-group-addon dropdown hidden-md-down">
-
-
-                                    </div>
-                                    <input type="text" class="form-control typeahead" name="s"
-                                           value="" placeholder="Search keyword...">
-                                    <ul class="typeahead dropdown-menu"></ul>
-                                    <button><i class="fa fa-search text-secondary"></i></button>
+                                    <input type="text" class="form-control" placeholder="{{ __('Search keyword...') }}" name="q">
+                                    <button onclick="document.getElementById('top-form').submit()" id="tn-searchtop" class="js-btn-searchtop" type="button"><i class="fa fa-search text-secondary"></i></button>
                                 </div>
                             </div>
                         </form>

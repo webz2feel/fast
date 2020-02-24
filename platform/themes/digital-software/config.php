@@ -58,7 +58,7 @@ return [
             //     $view->with('auth', \Auth::user());
             // });
 
-            $theme->composer(['index','software-categories','left-side','software-detail'], function($view) {
+            $theme->composer(['index','software-categories','left-side','software-detail','search'], function($view) {
                 $categories = collect([]);
                 $categories = app(CategoryInterface::class)->advancedGet([
                      'condition' => [

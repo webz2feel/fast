@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 43);
+/******/ 	return __webpack_require__(__webpack_require__.s = 51);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -506,7 +506,7 @@ jQuery(document).ready(function ($) {
 
 /***/ }),
 
-/***/ 43:
+/***/ 51:
 /*!*******************************************************************************!*\
   !*** multi ./platform/plugins/translation/resources/assets/js/translation.js ***!
   \*******************************************************************************/

@@ -37301,6 +37301,61 @@ if (token) {
 
 /***/ }),
 
+/***/ "./platform/plugins/custom-field/resources/assets/sass/custom-field.scss":
+/*!*******************************************************************************!*\
+  !*** ./platform/plugins/custom-field/resources/assets/sass/custom-field.scss ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./platform/plugins/custom-field/resources/assets/sass/edit-field-group.scss":
+/*!***********************************************************************************!*\
+  !*** ./platform/plugins/custom-field/resources/assets/sass/edit-field-group.scss ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./platform/plugins/gallery/resources/assets/sass/admin-gallery.scss":
+/*!***************************************************************************!*\
+  !*** ./platform/plugins/gallery/resources/assets/sass/admin-gallery.scss ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./platform/plugins/gallery/resources/assets/sass/gallery.scss":
+/*!*********************************************************************!*\
+  !*** ./platform/plugins/gallery/resources/assets/sass/gallery.scss ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./platform/plugins/gallery/resources/assets/sass/object-gallery.scss":
+/*!****************************************************************************!*\
+  !*** ./platform/plugins/gallery/resources/assets/sass/object-gallery.scss ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./platform/plugins/language/resources/assets/sass/language-public.scss":
 /*!******************************************************************************!*\
   !*** ./platform/plugins/language/resources/assets/sass/language-public.scss ***!
@@ -37316,6 +37371,28 @@ if (token) {
 /*!***********************************************************************!*\
   !*** ./platform/plugins/language/resources/assets/sass/language.scss ***!
   \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./platform/plugins/log-viewer/resources/assets/sass/log-viewer.scss":
+/*!***************************************************************************!*\
+  !*** ./platform/plugins/log-viewer/resources/assets/sass/log-viewer.scss ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./platform/plugins/member/resources/assets/sass/member.scss":
+/*!*******************************************************************!*\
+  !*** ./platform/plugins/member/resources/assets/sass/member.scss ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -37423,9 +37500,9 @@ if (token) {
 /***/ }),
 
 /***/ 0:
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./platform/core/base/resources/assets/js/app.js ./platform/core/base/resources/assets/sass/base/themes/blue.scss ./platform/core/base/resources/assets/sass/base/themes/darkblue.scss ./platform/core/base/resources/assets/sass/base/themes/default.scss ./platform/core/base/resources/assets/sass/base/themes/grey.scss ./platform/core/base/resources/assets/sass/base/themes/light.scss ./platform/core/base/resources/assets/sass/core.scss ./platform/core/base/resources/assets/sass/custom/system-info.scss ./platform/core/base/resources/assets/sass/custom/email.scss ./platform/core/setting/resources/assets/sass/setting.scss ./platform/core/table/resources/assets/sass/table.scss ./platform/core/media/resources/assets/sass/media.scss ./platform/packages/installer/resources/assets/sass/style.scss ./platform/packages/plugin-management/resources/assets/sass/plugin.scss ./platform/packages/revision/resources/assets/sass/revision.scss ./platform/packages/theme/resources/assets/sass/custom-css.scss ./platform/packages/theme/resources/assets/sass/admin-bar.scss ./platform/themes/digital-software/assets/sass/style.scss ./platform/themes/flex-home/assets/sass/style.scss ./platform/plugins/backup/resources/assets/sass/backup.scss ./platform/plugins/contact/resources/assets/sass/contact.scss ./platform/plugins/language/resources/assets/sass/language.scss ./platform/plugins/language/resources/assets/sass/language-public.scss ./platform/plugins/payment/resources/assets/sass/payment.scss ./platform/plugins/payment/resources/assets/sass/payment-methods.scss ./platform/plugins/real-estate/resources/assets/sass/real-estate.scss ./platform/plugins/real-estate/resources/assets/sass/currencies.scss ./platform/plugins/translation/resources/assets/sass/translation.scss ./platform/plugins/vendor/resources/assets/sass/vendor.scss ./platform/plugins/vendor/resources/assets/sass/app.scss ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./platform/core/base/resources/assets/js/app.js ./platform/core/base/resources/assets/sass/base/themes/blue.scss ./platform/core/base/resources/assets/sass/base/themes/darkblue.scss ./platform/core/base/resources/assets/sass/base/themes/default.scss ./platform/core/base/resources/assets/sass/base/themes/grey.scss ./platform/core/base/resources/assets/sass/base/themes/light.scss ./platform/core/base/resources/assets/sass/core.scss ./platform/core/base/resources/assets/sass/custom/system-info.scss ./platform/core/base/resources/assets/sass/custom/email.scss ./platform/core/setting/resources/assets/sass/setting.scss ./platform/core/table/resources/assets/sass/table.scss ./platform/core/media/resources/assets/sass/media.scss ./platform/packages/installer/resources/assets/sass/style.scss ./platform/packages/plugin-management/resources/assets/sass/plugin.scss ./platform/packages/revision/resources/assets/sass/revision.scss ./platform/packages/theme/resources/assets/sass/custom-css.scss ./platform/packages/theme/resources/assets/sass/admin-bar.scss ./platform/themes/digital-software/assets/sass/style.scss ./platform/themes/flex-home/assets/sass/style.scss ./platform/plugins/backup/resources/assets/sass/backup.scss ./platform/plugins/contact/resources/assets/sass/contact.scss ./platform/plugins/custom-field/resources/assets/sass/edit-field-group.scss ./platform/plugins/custom-field/resources/assets/sass/custom-field.scss ./platform/plugins/gallery/resources/assets/sass/gallery.scss ./platform/plugins/gallery/resources/assets/sass/object-gallery.scss ./platform/plugins/gallery/resources/assets/sass/admin-gallery.scss ./platform/plugins/language/resources/assets/sass/language.scss ./platform/plugins/language/resources/assets/sass/language-public.scss ./platform/plugins/log-viewer/resources/assets/sass/log-viewer.scss ./platform/plugins/member/resources/assets/sass/member.scss ./platform/plugins/payment/resources/assets/sass/payment.scss ./platform/plugins/payment/resources/assets/sass/payment-methods.scss ./platform/plugins/real-estate/resources/assets/sass/real-estate.scss ./platform/plugins/real-estate/resources/assets/sass/currencies.scss ./platform/plugins/translation/resources/assets/sass/translation.scss ./platform/plugins/vendor/resources/assets/sass/vendor.scss ./platform/plugins/vendor/resources/assets/sass/app.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -37450,8 +37527,15 @@ __webpack_require__(/*! E:\laragon\www\fast\platform\themes\digital-software\ass
 __webpack_require__(/*! E:\laragon\www\fast\platform\themes\flex-home\assets\sass\style.scss */"./platform/themes/flex-home/assets/sass/style.scss");
 __webpack_require__(/*! E:\laragon\www\fast\platform\plugins\backup\resources\assets\sass\backup.scss */"./platform/plugins/backup/resources/assets/sass/backup.scss");
 __webpack_require__(/*! E:\laragon\www\fast\platform\plugins\contact\resources\assets\sass\contact.scss */"./platform/plugins/contact/resources/assets/sass/contact.scss");
+__webpack_require__(/*! E:\laragon\www\fast\platform\plugins\custom-field\resources\assets\sass\edit-field-group.scss */"./platform/plugins/custom-field/resources/assets/sass/edit-field-group.scss");
+__webpack_require__(/*! E:\laragon\www\fast\platform\plugins\custom-field\resources\assets\sass\custom-field.scss */"./platform/plugins/custom-field/resources/assets/sass/custom-field.scss");
+__webpack_require__(/*! E:\laragon\www\fast\platform\plugins\gallery\resources\assets\sass\gallery.scss */"./platform/plugins/gallery/resources/assets/sass/gallery.scss");
+__webpack_require__(/*! E:\laragon\www\fast\platform\plugins\gallery\resources\assets\sass\object-gallery.scss */"./platform/plugins/gallery/resources/assets/sass/object-gallery.scss");
+__webpack_require__(/*! E:\laragon\www\fast\platform\plugins\gallery\resources\assets\sass\admin-gallery.scss */"./platform/plugins/gallery/resources/assets/sass/admin-gallery.scss");
 __webpack_require__(/*! E:\laragon\www\fast\platform\plugins\language\resources\assets\sass\language.scss */"./platform/plugins/language/resources/assets/sass/language.scss");
 __webpack_require__(/*! E:\laragon\www\fast\platform\plugins\language\resources\assets\sass\language-public.scss */"./platform/plugins/language/resources/assets/sass/language-public.scss");
+__webpack_require__(/*! E:\laragon\www\fast\platform\plugins\log-viewer\resources\assets\sass\log-viewer.scss */"./platform/plugins/log-viewer/resources/assets/sass/log-viewer.scss");
+__webpack_require__(/*! E:\laragon\www\fast\platform\plugins\member\resources\assets\sass\member.scss */"./platform/plugins/member/resources/assets/sass/member.scss");
 __webpack_require__(/*! E:\laragon\www\fast\platform\plugins\payment\resources\assets\sass\payment.scss */"./platform/plugins/payment/resources/assets/sass/payment.scss");
 __webpack_require__(/*! E:\laragon\www\fast\platform\plugins\payment\resources\assets\sass\payment-methods.scss */"./platform/plugins/payment/resources/assets/sass/payment-methods.scss");
 __webpack_require__(/*! E:\laragon\www\fast\platform\plugins\real-estate\resources\assets\sass\real-estate.scss */"./platform/plugins/real-estate/resources/assets/sass/real-estate.scss");

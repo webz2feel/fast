@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 38);
+/******/ 	return __webpack_require__(__webpack_require__.s = 45);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -214,7 +214,7 @@ $(document).ready(function () {
 
 /***/ }),
 
-/***/ 38:
+/***/ 45:
 /*!*******************************************************************************!*\
   !*** multi ./platform/plugins/payment/resources/assets/js/payment-methods.js ***!
   \*******************************************************************************/
